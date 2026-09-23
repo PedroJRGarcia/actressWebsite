@@ -64,7 +64,7 @@ export const App: React.FC = () => {
 
       <footer className='footer'>
         <p>
-          © {new Date().getFullYear()} {profile.name}. {t.footer.rights}
+          © {new Date().getFullYear()} <span className='footer-name'>{profile.name}</span>. {t.footer.rights}
         </p>
         <p className='muted'>
           {t.footer.createdBy} {profile.creator}
