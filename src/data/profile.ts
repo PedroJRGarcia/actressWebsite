@@ -20,8 +20,8 @@ const showreels: Showreel[] = [
 ]
 
 export const profile = {
-  name: 'Elina Surname',
-  creator: "Creator's Name",
+  name: 'Elina Fernandez',
+  creator: "PedroG",
   email: 'elina@example.com',
   agency: { name: 'Agency Name', url: 'https://example.com' },
   headshot: headshot, 
