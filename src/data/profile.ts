@@ -8,11 +8,11 @@ const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 // A showreel is either a Vimeo video (the number in vimeo.com/123456789)
 // or a self-hosted .mp4 in public/video/ (keep each file under 100 MB for GitHub)
-type Showreel = { title: string } & ({ vimeoId: string } | { src: string; poster?: string })
+type Showreel = { title: string } & ({ vimeoId: string } | { src: string; poster?: string }) | { title: string; filmmakersUrl: string }
 
 const showreels: Showreel[] = [
   { title: 'Showreel 2026', vimeoId: '1084537' },
-  { title: 'Drama', vimeoId: '1084537' },
+  { title: 'Showreel 2026', filmmakersUrl: 'https://www.filmmakers.eu/…/iframe' },
   { title: 'Video1', src: publicFile('videos/mitbewohner.mp4') },
   { title: 'Video2', src: publicFile('videos/narration-de.mp3') },
   // Self-hosted example: add public/video/comedy.mp4 (and optionally a poster image), then uncomment
