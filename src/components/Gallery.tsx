@@ -6,23 +6,77 @@ interface Props {
   t: Translation
 }
 
+const { photos } = profile
+
+// Moves to the previous/next photo, looping at both ends
+const step = (index: number | null, direction: number) =>
+  index === null ? null : (index + direction + photos.length) % photos.length
+
 export const Gallery: React.FC<Props> = ({ t }) => {
-  const [selected, setSelected] = React.useState<string | null>(null)
+  const [index, setIndex] = React.useState<number | null>(null)
+  const touchStartX = React.useRef(0)
+  const isOpen = index !== null
+
+  // While open: keyboard navigation and no page scroll behind the lightbox
+  React.useEffect(() => {
+    if (!isOpen) return
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIndex(null)
+      if (event.key === 'ArrowRight') setIndex(i => step(i, 1))
+      if (event.key === 'ArrowLeft') setIndex(i => step(i, -1))
+    }
+    document.addEventListener('keydown', onKeyDown)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
+
+  const navigate = (direction: number) => (event: React.MouseEvent) => {
+    event.stopPropagation() // don't close the lightbox
+    setIndex(i => step(i, direction))
+  }
+
+  // Mobile: swipe left = next photo, swipe right = previous photo
+  const onTouchEnd = (event: React.TouchEvent) => {
+    const distance = event.changedTouches[0].clientX - touchStartX.current
+    if (Math.abs(distance) > 50) setIndex(i => step(i, distance < 0 ? 1 : -1))
+  }
 
   return (
     <section id='gallery'>
       <h2>{t.nav.gallery}</h2>
       <div className='gallery'>
-        {profile.photos.map((photo, index) => (
-          <button key={photo} onClick={() => setSelected(photo)}>
-            <img src={photo} alt={`${profile.name} ${index + 1}`} loading='lazy' />
+        {photos.map((photo, i) => (
+          <button key={photo} onClick={() => setIndex(i)}>
+            <img src={photo} alt={`${profile.name} ${i + 1}`} loading='lazy' />
           </button>
         ))}
       </div>
 
-      {selected && (
-        <div className='lightbox' onClick={() => setSelected(null)}>
-          <img src={selected} alt={profile.name} />
+      {isOpen && (
+        // Clicking the dark background or ✕ closes it
+        <div
+          className='lightbox'
+          role='dialog'
+          aria-modal='true'
+          onClick={() => setIndex(null)}
+          onTouchStart={event => (touchStartX.current = event.touches[0].clientX)}
+          onTouchEnd={onTouchEnd}>
+          <img src={photos[index]} alt={`${profile.name} ${index + 1}`} onClick={event => event.stopPropagation()} />
+          <button className='lightbox-close' aria-label='Close'>
+            ✕
+          </button>
+          <button className='lightbox-prev' aria-label='Previous' onClick={navigate(-1)}>
+            ‹
+          </button>
+          <button className='lightbox-next' aria-label='Next' onClick={navigate(1)}>
+            ›
+          </button>
+          <p className='lightbox-counter'>
+            {index + 1} / {photos.length}
+          </p>
         </div>
       )}
     </section>
