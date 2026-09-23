@@ -246,8 +246,10 @@ main section {
   gap: 1.5rem;
 }
 
-.reels figure:first-child {
-  grid-column: 1 / -1; /* main showreel takes the full width */
+/* Main showreel, and a clip left alone on the last row, take the full width */
+.reels figure:first-child,
+.reels figure:nth-child(even):last-child {
+  grid-column: 1 / -1;
 }
 
 .reels iframe,
