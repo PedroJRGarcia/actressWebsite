@@ -12,13 +12,18 @@ export const Showreels: React.FC<Props> = ({ t }) => (
     <div className='reels'>
       {profile.showreels.map(reel => (
         <figure key={reel.title}>
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${reel.youtubeId}`}
-            title={reel.title}
-            loading='lazy'
-            allow='encrypted-media; picture-in-picture; fullscreen'
-            allowFullScreen
-          />
+          {'vimeoId' in reel ? (
+            // dnt=1: Vimeo's "Do Not Track" mode, no tracking cookies
+            <iframe
+              src={`https://player.vimeo.com/video/${reel.vimeoId}?dnt=1&title=0&byline=0&portrait=0`}
+              title={reel.title}
+              loading='lazy'
+              allow='fullscreen; picture-in-picture'
+              allowFullScreen
+            />
+          ) : (
+            <video src={reel.src} poster={reel.poster} controls preload='metadata' />
+          )}
           <figcaption>{reel.title}</figcaption>
         </figure>
       ))}
