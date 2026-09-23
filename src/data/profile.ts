@@ -13,8 +13,10 @@ const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
 type Showreel = { title: string } & ({ vimeoId: string } | { filmmakersUrl: string } | { src: string; poster?: string })
 
 const showreels: Showreel[] = [
-  { title: 'Showreel 2026', vimeoId: '1084537' },
   { title: 'Video1', src: publicFile('videos/mitbewohner.mp4') },
+  { title: 'Video2', src: publicFile('videos/geschwister.mp4') },
+  { title: 'Video3', src: publicFile('videos/vergewaltigung.mp4') },
+  { title: 'Showreel 2026', vimeoId: '1084537' },
   // Filmmakers: paste the real address from the embed code, then uncomment
   // { title: 'Showreel Filmmakers', filmmakersUrl: 'https://www.filmmakers.eu/…/iframe' },
   // Self-hosted example: add public/videos/comedy.mp4 (and optionally a poster image), then uncomment
