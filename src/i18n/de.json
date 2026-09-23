@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Start",
+    "showreels": "Showreels",
+    "gallery": "Galerie",
+    "voicereels": "Sprachproben",
+    "credits": "Filmografie",
+    "contact": "Kontakt"
+  },
+  "resume": "Vita herunterladen",
+  "role": "Schauspielerin",
+  "basedIn": "Wohnhaft in Berlin · Verfügbar in London",
+  "watchReel": "Showreel ansehen ▶",
+  "stats": [
+    { "label": "Spielalter", "value": "24 – 32" },
+    { "label": "Größe", "value": "172 cm" },
+    { "label": "Augen / Haare", "value": "Grün / Braun" },
+    { "label": "Sprachen", "value": "Deutsch, Englisch, Spanisch" }
+  ],
+  "creditsTable": { "year": "Jahr", "project": "Projekt", "role": "Rolle", "director": "Regie / Produktion" },
+  "contact": { "email": "E-Mail", "agency": "Agentur" },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "createdBy": "Website erstellt von",
+    "impressum": "Impressum",
+    "impressumText": "Angaben gemäß § 5 DDG: Elina Surname, Straße 1, 10115 Berlin, Deutschland. E-Mail: elina@example.com",
+    "privacy": "Datenschutzerklärung",
+    "privacyText": "Diese Website verwendet keine Cookies und erhebt keine personenbezogenen Daten. Eingebettete Videos nutzen den erweiterten Datenschutzmodus von YouTube (youtube-nocookie.com)."
+  }
+}

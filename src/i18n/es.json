@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "showreels": "Videobook",
+    "gallery": "Galería",
+    "voicereels": "Voz",
+    "credits": "Trayectoria",
+    "contact": "Contacto"
+  },
+  "resume": "Descargar CV",
+  "role": "Actriz",
+  "basedIn": "Residente en Berlín · Disponible en Londres",
+  "watchReel": "Ver videobook ▶",
+  "stats": [
+    { "label": "Edad escénica", "value": "24 – 32" },
+    { "label": "Altura", "value": "172 cm" },
+    { "label": "Ojos / Pelo", "value": "Verdes / Castaño" },
+    { "label": "Idiomas", "value": "Alemán, inglés, español" }
+  ],
+  "creditsTable": { "year": "Año", "project": "Proyecto", "role": "Papel", "director": "Dirección / Producción" },
+  "contact": { "email": "Email", "agency": "Agencia" },
+  "footer": {
+    "rights": "Todos los derechos reservados.",
+    "createdBy": "Web creada por",
+    "impressum": "Aviso legal (Impressum)",
+    "impressumText": "Información según § 5 DDG: Elina Surname, Street 1, 10115 Berlín, Alemania. Email: elina@example.com",
+    "privacy": "Política de privacidad",
+    "privacyText": "Esta web no usa cookies ni recoge datos personales. Los vídeos usan el modo de privacidad mejorada de YouTube (youtube-nocookie.com)."
+  }
+}

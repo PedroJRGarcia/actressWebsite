@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "home": "Home",
+    "showreels": "Showreels",
+    "gallery": "Gallery",
+    "voicereels": "Voicereels",
+    "credits": "Acting Credits",
+    "contact": "Contact"
+  },
+  "resume": "Download Resume",
+  "role": "Actress",
+  "basedIn": "Based in Berlin · Available in London",
+  "watchReel": "Watch Showreel ▶",
+  "stats": [
+    { "label": "Playing age", "value": "24 – 32" },
+    { "label": "Height", "value": "172 cm" },
+    { "label": "Eyes / Hair", "value": "Green / Brown" },
+    { "label": "Languages", "value": "German, English, Spanish" }
+  ],
+  "creditsTable": { "year": "Year", "project": "Project", "role": "Role", "director": "Director / Production" },
+  "contact": { "email": "Email", "agency": "Agency" },
+  "footer": {
+    "rights": "All Rights Reserved.",
+    "createdBy": "Website created by",
+    "impressum": "Impressum",
+    "impressumText": "Information according to § 5 DDG: Elina Surname, Street 1, 10115 Berlin, Germany. Email: elina@example.com",
+    "privacy": "Privacy Policy",
+    "privacyText": "This website does not use cookies or collect personal data. Embedded videos use YouTube's privacy-enhanced mode (youtube-nocookie.com)."
+  }
+}
