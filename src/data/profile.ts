@@ -1,9 +1,7 @@
 // Language-independent content. Edit this file to update the website.
 // Translated texts live in src/i18n.
-
-// Placeholders: replace with your own files, e.g.
-// import headshot from '../assets/headshot-main.webp'
-const placeholder = (id: number) => `https://picsum.photos/id/${id}/800/1200`
+import headshot from '../assets/headshot.webp'
+import headshot2 from '../assets/headshot.webp'
 
 // Files placed in /public are served from the site root (BASE_URL handles GitHub Pages sub-paths)
 const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
@@ -15,6 +13,8 @@ type Showreel = { title: string } & ({ vimeoId: string } | { src: string; poster
 const showreels: Showreel[] = [
   { title: 'Showreel 2026', vimeoId: '1084537' },
   { title: 'Drama', vimeoId: '1084537' },
+  { title: 'Video1', src: publicFile('videos/mitbewohner.mp4') },
+  { title: 'Video2', src: publicFile('videos/narration-de.mp3') },
   // Self-hosted example: add public/video/comedy.mp4 (and optionally a poster image), then uncomment
   // { title: 'Comedy', src: publicFile('video/comedy.mp4'), poster: publicFile('video/comedy.jpg') },
 ]
@@ -24,7 +24,8 @@ export const profile = {
   creator: "Creator's Name",
   email: 'elina@example.com',
   agency: { name: 'Agency Name', url: 'https://example.com' },
-  headshot: publicFile('photos/headshot.webp'),
+  headshot: headshot, 
+  headshot2: headshot2,
   resume: publicFile('resume.pdf'),
   links: [
     { label: 'IMDb', url: 'https://www.imdb.com' },
@@ -33,10 +34,21 @@ export const profile = {
     { label: 'Instagram', url: 'https://www.instagram.com' },
   ],
   showreels,
-  photos: [placeholder(64), placeholder(65), placeholder(338), placeholder(1011), placeholder(1027), placeholder(996)],
+  photos: [
+    publicFile('photos/1.webp'),
+    publicFile('photos/2.webp'),
+    publicFile('photos/3.webp'),
+    publicFile('photos/4.webp'),
+    publicFile('photos/5.webp'),
+    publicFile('photos/6.webp'),
+    publicFile('photos/7.webp'),
+    publicFile('photos/8.webp'),
+    publicFile('photos/9.webp'),
+    publicFile('photos/10.webp'),
+  ],
   voicereels: [
-    { title: 'Commercial (EN)', src: publicFile('audio/commercial-en.mp3') },
-    { title: 'Narration (DE)', src: publicFile('audio/narration-de.mp3') },
+    { title: 'Audio1', src: publicFile('audios/commercial-en.mp3') },
+    { title: 'Audio2', src: publicFile('audios/narration-de.mp3') },
   ],
   credits: [
     { year: 2026, title: 'Cine-Project Berlin', role: 'Lead', director: 'M. Müller', company: 'ZDF / UFA' },
