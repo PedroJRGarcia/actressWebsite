@@ -24,7 +24,7 @@ export const profile = {
   creator: "Creator's Name",
   email: 'elina@example.com',
   agency: { name: 'Agency Name', url: 'https://example.com' },
-  headshot: placeholder(64),
+  headshot: publicFile('photos/headshot.webp'),
   resume: publicFile('resume.pdf'),
   links: [
     { label: 'IMDb', url: 'https://www.imdb.com' },
