@@ -99,17 +99,32 @@ h2 {
 
 /* HEADER */
 .header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  inset: 0 0 auto;
   z-index: 10;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.5rem 1.5rem;
   padding: 0.75rem 1.5rem;
+  /* Over the start photo: transparent, blends with the picture */
+  background: linear-gradient(rgb(0 0 0 / 0.85), transparent);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
+}
+
+/* Over the photo: white text with a soft shadow so it stays readable */
+.header:not(.solid) .nav a:not(.button),
+.header:not(.solid) .lang button,
+.header:not(.solid) .menu-toggle {
+  text-shadow: 0 1px 6px rgb(0 0 0 / 0.9);
+}
+
+/* After scrolling (or with the mobile menu open): solid, readable over any section */
+.header.solid {
   background: rgb(18 18 18 / 0.95);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  border-color: var(--border);
 }
 
 .logo {
@@ -124,30 +139,32 @@ h2 {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .nav a:not(.button) {
   white-space: nowrap;
-  color: var(--muted);
+  color: var(--text);
   text-decoration: none;
+  transition: color 0.2s;
 }
 
 .nav a:not(.button):hover {
-  color: var(--text);
+  color: var(--accent);
 }
 
 .lang {
   display: flex;
   align-items: center;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
 }
 
 .lang button {
   padding: 0.25rem;
   border: none;
   background: none;
-  color: var(--muted);
+  color: rgb(255 255 255 / 0.7);
   cursor: pointer;
 }
 
@@ -164,7 +181,7 @@ h2 {
 .menu-toggle {
   display: none;
   padding: 0.25rem 0.5rem;
-  border: 1px solid var(--border);
+  border: 1px solid rgb(255 255 255 / 0.5);
   border-radius: var(--radius);
   background: none;
   color: var(--text);
@@ -216,9 +233,10 @@ main section {
 main .hero {
   position: relative;
   max-width: none;
-  height: calc(100svh - 4rem);
+  height: 100svh; /* the header floats on top of the photo */
   min-height: 28rem;
   padding: 0;
+  overflow: hidden;
 }
 
 .hero img {
@@ -227,7 +245,19 @@ main .hero {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 25%; /* keeps the face in frame */
+  object-position: center top; /* never cuts the head */
+}
+
+/* Wide screens: the whole photo without zoom, sides filled with a blurred copy */
+@media (orientation: landscape) {
+  .hero .hero-photo {
+    object-fit: contain;
+  }
+}
+
+.hero-blur {
+  filter: blur(30px) brightness(0.5);
+  scale: 1.1;
 }
 
 .hero-content {
