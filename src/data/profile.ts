@@ -49,6 +49,8 @@ export const profile = {
     publicFile('photos/8.webp'),
     publicFile('photos/9.webp'),
     publicFile('photos/10.webp'),
+    publicFile('photos/11.webp'),
+    publicFile('photos/12.webp'),
   ],
   voicereels: [
     { title: 'Audio1', src: publicFile('audios/commercial-en.mp3') },
