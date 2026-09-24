@@ -1,6 +1,7 @@
 import React from 'react'
 import { profile } from '../data/profile'
 import type { SectionProps } from '../i18n'
+import { Events } from './Events'
 
 export const Home: React.FC<SectionProps> = ({ t }) => (
   <>
@@ -32,5 +33,8 @@ export const Home: React.FC<SectionProps> = ({ t }) => (
         ))}
       </dl>
     </section>
+
+    {/* Upcoming events, right under "About me" */}
+    <Events t={t} />
   </>
 )

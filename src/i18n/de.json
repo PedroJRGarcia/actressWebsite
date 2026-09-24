@@ -1,4 +1,5 @@
 {
+  "locale": "de-DE",
   "nav": {
     "home": "Start",
     "showreels": "Showreels",
@@ -10,6 +11,7 @@
   "resume": "Vita herunterladen",
   "role": "Schauspielerin",
   "watchReel": "Showreel ansehen ▶",
+  "events": { "title": "Termine", "more": "Mehr Infos" },
   "about": {
     "title": "Über mich",
     "text": "Ich bin Schauspielerin mit Sitz in München und spiele auf Deutsch, Englisch und Spanisch. Hier steht ein kurzer Text über meine Ausbildung, meine Erfahrung und was mich ausmacht."
@@ -31,6 +33,6 @@
     "impressum": "Impressum",
     "impressumText": "Angaben gemäß § 5 DDG: Elina Surname, Straße 1, 10115 Berlin, Deutschland. E-Mail: elina@example.com",
     "privacy": "Datenschutzerklärung",
-    "privacyText": "Diese Website verwendet keine Cookies und erhebt keine personenbezogenen Daten. Videos und Audios werden direkt von dieser Website bereitgestellt oder von Filmmakers (filmmakers.eu) geladen; beim Laden eines Filmmakers-Videos oder -Audios erhält Filmmakers Ihre IP-Adresse und kann eigene Cookies setzen."
+    "privacyText": "Diese Website verwendet keine Cookies und erhebt keine personenbezogenen Daten. Videos und Audios werden direkt von dieser Website bereitgestellt oder von Filmmakers (filmmakers.eu) geladen; beim Laden eines Filmmakers-Videos oder -Audios erhält Filmmakers Ihre IP-Adresse und kann eigene Cookies setzen. Für einen anonymen Besucherzähler wird beim Aufruf der Seite eine Anfrage an abacus.jasoncameron.dev gesendet; dabei wird Ihre IP-Adresse übertragen. Der Zähler setzt keine Cookies."
   }
 }

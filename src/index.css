@@ -381,11 +381,79 @@ main .hero {
 .reels iframe.filmmakers {
   aspect-ratio: auto;
   height: calc(62cqw + 110px);
+  margin-top: -34px; /* hides the player's top bar (always 34px tall) */
+  border-radius: 0;
+}
+
+.filmmakers-crop {
+  height: calc(62cqw + 76px); /* player height minus the hidden 34px bar */
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+/* Buttons to switch Filmmakers group: same look as the download button (white, turquoise on hover) */
+.reel-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.reel-tabs button {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.reel-tabs button.active {
+  border-color: #fff;
+  background: #fff;
+  color: #000;
+}
+
+.reel-tabs button:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Small link in place of the cropped bar, top-left over the video */
+.filmmakers-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.6rem;
+  z-index: 1;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  color: rgb(255 255 255 / 0.65);
+  text-decoration: none;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 0.8);
+}
+
+.filmmakers-badge:hover {
+  color: #fff;
 }
 
 .reels figcaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
   margin-top: 0.5rem;
   color: var(--muted);
+}
+
+.reels figcaption .copyright-text {
+  margin: 0;
 }
 
 .gallery {
@@ -527,12 +595,6 @@ main .hero {
   left: 0.6rem;
 }
 
-/* Filmmakers video: top-right, clear of the player's own title bar on the left */
-.reels .media:has(.filmmakers) .copyright {
-  right: 0.6rem;
-  left: auto;
-}
-
 /* Audios: a line under the player */
 .copyright-text {
   display: block;
@@ -540,6 +602,103 @@ main .hero {
   font-size: 0.7rem;
   color: var(--muted);
   opacity: 0.8;
+}
+
+/* UPCOMING EVENTS: date block, title + place, optional link */
+.events ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.events li {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.events li:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.events time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.event-day {
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.event-month {
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.event-link {
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.event-link:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .events li {
+    grid-template-columns: 3.5rem 1fr;
+  }
+
+  .event-link {
+    grid-column: 2;
+  }
+}
+
+/* Hidden visitor counter: a faint dot in the footer corner, the number appears only on hover */
+.visitor-dot {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  outline: none;
+  cursor: default;
+}
+
+/* Larger invisible area so the tiny dot is easy to hover or tap */
+.visitor-dot::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+}
+
+.visitor-count {
+  position: absolute;
+  right: 12px;
+  bottom: -5px;
+  font-size: 0.7rem;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.visitor-dot:hover .visitor-count,
+.visitor-dot:focus .visitor-count {
+  opacity: 1;
 }
 
 /* VITA: one dropdown per group (training, film, theater) */
@@ -622,6 +781,7 @@ th {
 }
 
 .footer {
+  position: relative;
   padding: 2rem 1.5rem;
   border-top: 1px solid var(--border);
   text-align: center;

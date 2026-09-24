@@ -4,6 +4,7 @@ import { Credits } from './components/Credits'
 import { Gallery } from './components/Gallery'
 import { Home } from './components/Home'
 import { Showreels } from './components/Showreels'
+import { VisitorDot } from './components/VisitorDot'
 import { Voicereels } from './components/Voicereels'
 import { profile } from './data/profile'
 import { defaultLang, languages, translations, type Lang } from './i18n'
@@ -84,6 +85,7 @@ export const App: React.FC = () => {
           <summary>{t.footer.privacy}</summary>
           <p>{t.footer.privacyText}</p>
         </details>
+        <VisitorDot />
       </footer>
     </>
   )

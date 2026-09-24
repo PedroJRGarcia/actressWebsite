@@ -7,13 +7,17 @@ const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 // Filmmakers video player address. `id` comes from the embed code: …/elina-fernandez/video/<id>?…
 // background_color=121212 = the site's dark background (the player then uses white text)
-const filmmakers = (id: number, playlist = false) =>
-  `https://www.filmmakers.eu/es/actors/elina-fernandez/video/${id}?autoplay=false&background_color=121212&iframe=v2${playlist ? '&playlist=h' : ''}`
+// playlist=h: the clips of that group are shown as thumbnails to switch between
+export const filmmakersVideo = (id: number) =>
+  `https://www.filmmakers.eu/es/actors/elina-fernandez/video/${id}?autoplay=false&background_color=121212&iframe=v2&playlist=h`
 
 // A showreel is one of:
-// - Filmmakers: the src="..." address from the Filmmakers embed (iframe) code
+// - Filmmakers: one or more groups ("folders" on Filmmakers), shown as buttons above the player.
+//   `id` is the number from each group's embed code
 // - Self-hosted: an H.264 .mp4 in public/videos/ (keep each file under 100 MB for GitHub)
-type Showreel = { title: string; copyright: string } & ({ filmmakersUrl: string } | { src: string; poster?: string })
+type Showreel = { title: string; copyright: string } & (
+  { filmmakers: { label: string; id: number }[] } | { src: string; poster?: string }
+)
 
 // Copyright: the author shown as "© …" on each photo, video and audio. Change it per file.
 // COPYRIGHT is the default; replace it on any item with the real author, e.g. copyright: 'Anna Schmidt'
@@ -43,8 +47,11 @@ const showreels: Showreel[] = [
   },
   {
     title: 'Geschwister',
-    // playlist: the player shows the clips of this group as thumbnails to switch between
-    filmmakersUrl: filmmakers(121502, true),
+    filmmakers: [
+      { label: '2023', id: 121502 },
+      { label: '2023 Sub ESP', id: 121503 },
+      { label: 'About me', id: 155593 },
+    ],
     copyright: COPYRIGHT,
   },
   // Self-hosted example: add public/videos/comedy.mp4 (and optionally a poster image), then uncomment
@@ -107,6 +114,18 @@ export const profile = {
       copyright: COPYRIGHT,
     },
   ],
+  // "Upcoming events" (under "About me"). Date as 'YYYY-MM-DD'; past events hide themselves,
+  // and the whole block hides when there is nothing coming up. `url` is optional (tickets, info…)
+  events: [
+    // Placeholder: replace with the real events
+    {
+      date: '2026-10-17',
+      title: 'Premiere: Cine-Project Berlin',
+      place: 'Berlinale Palast, Berlin',
+      url: 'https://example.com',
+    },
+    { date: '2026-11-08', title: 'Theaterstück – Lesung', place: 'Kammerspiele, München' },
+  ] as { date: string; title: string; place: string; url?: string }[],
   // "Vita" section: one dropdown per group, shown in this order: training, film, theater
   credits: {
     training: [
