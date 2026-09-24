@@ -1,4 +1,5 @@
 {
+  "locale": "es-ES",
   "nav": {
     "home": "Inicio",
     "showreels": "Showreels",
@@ -10,6 +11,7 @@
   "resume": "Descargar CV",
   "role": "Actriz",
   "watchReel": "Ver videobook ▶",
+  "events": { "title": "Próximos eventos", "more": "Más info" },
   "about": {
     "title": "Sobre mí",
     "text": "Soy actriz, vivo en Múnich y trabajo en alemán, inglés y español. Aquí va un breve texto sobre mi formación, mi experiencia y lo que me hace única."
@@ -31,6 +33,6 @@
     "impressum": "Aviso legal (Impressum)",
     "impressumText": "Información según § 5 DDG: Elina Surname, Street 1, 10115 Berlín, Alemania. Email: elina@example.com",
     "privacy": "Política de privacidad",
-    "privacyText": "Esta web no usa cookies ni recoge datos personales. Los vídeos y audios se sirven desde esta web o se cargan desde Filmmakers (filmmakers.eu); al cargar un vídeo o audio de Filmmakers, Filmmakers recibe tu dirección IP y puede instalar sus propias cookies."
+    "privacyText": "Esta web no usa cookies ni recoge datos personales. Los vídeos y audios se sirven desde esta web o se cargan desde Filmmakers (filmmakers.eu); al cargar un vídeo o audio de Filmmakers, Filmmakers recibe tu dirección IP y puede instalar sus propias cookies. Para un contador anónimo de visitas, al abrir la página se envía una petición a abacus.jasoncameron.dev, que recibe tu dirección IP. El contador no instala cookies."
   }
 }
