@@ -8,8 +8,6 @@
   --radius: 6px;
   --max-width: 1100px;
   /* Fonts for the name. Change them only here. */
-  --font-name-title: 'Lavishly Yours', cursive; /* start page */
-  --font-name-small: 'Italianno', cursive; /* header and footer */
 }
 
 * {
