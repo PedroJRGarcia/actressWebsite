@@ -7,8 +7,9 @@
   --accent: #e50914;
   --radius: 6px;
   --max-width: 1100px;
-  /* Font for the name (header, start page, footer). Change it only here. */
-  --font-name: 'Lavishly Yours', cursive;
+  /* Fonts for the name. Change them only here. */
+  --font-name-title: 'Lavishly Yours', cursive; /* start page */
+  --font-name-small: 'Italianno', cursive; /* header and footer */
 }
 
 * {
@@ -43,6 +44,7 @@ img {
 }
 
 h1 {
+  font-family: var(--font-name-title);
   font-size: clamp(3rem, 8vw, 5rem);
   line-height: 1.1;
 }
@@ -51,7 +53,6 @@ h1 {
 .logo,
 h1,
 .footer-name {
-  font-family: var(--font-name);
   font-weight: 400;
   letter-spacing: normal;
   text-transform: none;
@@ -111,7 +112,8 @@ h2 {
 
 .logo {
   margin-right: auto;
-  font-size: 1.6rem;
+  font-family: var(--font-name-small);
+  font-size: 2rem;
   line-height: 1;
   text-decoration: none;
 }
@@ -419,7 +421,8 @@ th {
 
 /* FOOTER */
 .footer-name {
-  font-size: 1.4rem;
+  font-family: var(--font-name-small);
+  font-size: 1.6rem;
 }
 
 .footer {
