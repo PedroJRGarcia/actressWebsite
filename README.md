@@ -6,7 +6,7 @@
 
 # Tech Stack
 1. Build it with: React + TypeScript + Vite
-2. Deployment with Github Pages
+2. Deployment with Github Pages: `npm run deploy` (publishes the `dist` build to the `gh-pages` branch)
 3. Responsive
 4. Good IT practices
 5. Simple
