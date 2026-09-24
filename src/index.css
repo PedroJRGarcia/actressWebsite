@@ -480,6 +480,49 @@ main .hero {
   overflow-x: auto;
 }
 
+/* COPYRIGHT: small, half-transparent "© Author" on photos, videos and audios.
+   The author of each file is set in src/data/profile.ts */
+.media,
+.gallery button {
+  position: relative;
+  display: block;
+  margin: 0;
+}
+
+.media video,
+.media iframe {
+  display: block;
+}
+
+.copyright {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.4rem;
+  z-index: 1;
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  color: rgb(255 255 255 / 0.65);
+  text-shadow: 0 1px 3px rgb(0 0 0 / 0.8);
+  pointer-events: none; /* never blocks clicks on the photo or the video controls */
+}
+
+/* Videos: top-left corner, clear of the play bar and of Vimeo's menu button (top-right) */
+.reels .copyright {
+  top: 0.5rem;
+  right: auto;
+  bottom: auto;
+  left: 0.6rem;
+}
+
+/* Audios: a line under the player */
+.copyright-text {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
 /* VITA: one dropdown per group (training, film, theater) */
 .vita-group {
   border-bottom: 1px solid var(--border);

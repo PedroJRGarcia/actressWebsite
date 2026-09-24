@@ -10,6 +10,7 @@ export const Voicereels: React.FC<SectionProps> = ({ t }) => (
         <div key={reel.title} className='card'>
           <p>{reel.title}</p>
           <audio controls preload='none' src={reel.src} />
+          <small className='copyright-text'>© {reel.copyright}</small>
         </div>
       ))}
     </div>
