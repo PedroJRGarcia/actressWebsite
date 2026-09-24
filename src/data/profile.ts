@@ -29,7 +29,7 @@ export const profile = {
   email: 'elina@example.com',
   agency: { name: 'Agency Name', url: 'https://example.com' },
   // Start page: the big photo on arrival (fills the screen, faces are kept in frame)
-  heroPhoto: headshot,
+  heroPhoto: publicFile('photos/6.webp'),
   // "About" section: 3 photos shown as developed prints (1 portrait, 2 square, 3 landscape)
   homePhotos: [headshot2, publicFile('photos/1.webp'), publicFile('photos/2.webp')],
   resume: publicFile('resume.pdf'),
