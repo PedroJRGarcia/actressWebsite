@@ -18,13 +18,6 @@ export const Home: React.FC<SectionProps> = ({ t }) => (
 
     {/* A little about Elina, then her details */}
     <section className='about'>
-      <div className='prints'>
-        {profile.homePhotos.map((photo, index) => (
-          <figure key={`${index}-${photo}`} className='print'>
-            <img src={photo} alt={`${profile.name} ${index + 1}`} loading='lazy' />
-          </figure>
-        ))}
-      </div>
       <div>
         <h2>{t.about.title}</h2>
         <p className='about-text'>{t.about.text}</p>
