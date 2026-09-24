@@ -370,6 +370,11 @@ main .hero {
   background: #000;
 }
 
+/* Filmmakers player is taller than 16:9 (its embed code uses padding-top: 80%) */
+.reels iframe.filmmakers {
+  aspect-ratio: 5 / 4;
+}
+
 .reels figcaption {
   margin-top: 0.5rem;
   color: var(--muted);
@@ -506,7 +511,7 @@ main .hero {
   pointer-events: none; /* never blocks clicks on the photo or the video controls */
 }
 
-/* Videos: top-left corner, clear of the play bar and of Vimeo's menu button (top-right) */
+/* Videos: top-left corner, clear of the play bar and the player's buttons */
 .reels .copyright {
   top: 0.5rem;
   right: auto;
