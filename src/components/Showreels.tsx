@@ -13,12 +13,8 @@ export const Showreels: React.FC<SectionProps> = ({ t }) => (
               <video src={reel.src} poster={reel.poster} controls preload='metadata' />
             ) : (
               <iframe
-                src={
-                  'vimeoId' in reel
-                    ? // dnt=1: Vimeo's "Do Not Track" mode, no tracking cookies
-                      `https://player.vimeo.com/video/${reel.vimeoId}?dnt=1&title=0&byline=0&portrait=0`
-                    : reel.filmmakersUrl
-                }
+                className='filmmakers'
+                src={reel.filmmakersUrl}
                 title={reel.title}
                 loading='lazy'
                 allow='fullscreen; picture-in-picture'

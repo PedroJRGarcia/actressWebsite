@@ -6,12 +6,9 @@ import headshot from '../assets/headshot.webp'
 const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 // A showreel is one of:
-// - Vimeo: the number in vimeo.com/123456789
 // - Filmmakers: the src="..." address from the Filmmakers embed (iframe) code
 // - Self-hosted: an H.264 .mp4 in public/videos/ (keep each file under 100 MB for GitHub)
-type Showreel = { title: string; copyright: string } & (
-  { vimeoId: string } | { filmmakersUrl: string } | { src: string; poster?: string }
-)
+type Showreel = { title: string; copyright: string } & ({ filmmakersUrl: string } | { src: string; poster?: string })
 
 // Copyright: the author shown as "© …" on each photo, video and audio. Change it per file.
 // COPYRIGHT is the default; replace it on any item with the real author, e.g. copyright: 'Anna Schmidt'
@@ -36,9 +33,12 @@ const showreels: Showreel[] = [
     poster: publicFile('videos/vergewaltigung.webp'),
     copyright: COPYRIGHT,
   },
-  { title: 'Showreel 2026', vimeoId: '1084537', copyright: COPYRIGHT },
-  // Filmmakers: paste the real address from the embed code, then uncomment
-  // { title: 'Showreel Filmmakers', filmmakersUrl: 'https://www.filmmakers.eu/…/iframe', copyright: COPYRIGHT },
+  {
+    title: 'Geschwister',
+    filmmakersUrl:
+      'https://www.filmmakers.eu/es/actors/elina-fernandez/video/121502?autoplay=false&background_color=none&iframe=v2&playlist=h',
+    copyright: COPYRIGHT,
+  },
   // Self-hosted example: add public/videos/comedy.mp4 (and optionally a poster image), then uncomment
   // { title: 'Comedy', src: publicFile('videos/comedy.mp4'), poster: publicFile('videos/comedy.jpg'), copyright: COPYRIGHT },
 ]
