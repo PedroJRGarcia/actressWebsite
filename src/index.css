@@ -370,9 +370,17 @@ main .hero {
   background: #000;
 }
 
-/* Filmmakers player is taller than 16:9 (its embed code uses padding-top: 80%) */
+/* Filmmakers player: title bar + 16:9 video + a row of thumbnails to switch clips.
+   Its height grows with its width (measured: 302px tall at 343px wide, 771px at 1100px),
+   so it is sized from the width of its box (cqw) instead of a fixed ratio.
+   Too short and the thumbnails get cut off, and clips can no longer be switched. */
+.reels .media {
+  container-type: inline-size;
+}
+
 .reels iframe.filmmakers {
-  aspect-ratio: 5 / 4;
+  aspect-ratio: auto;
+  height: calc(62cqw + 110px);
 }
 
 .reels figcaption {
@@ -517,6 +525,12 @@ main .hero {
   right: auto;
   bottom: auto;
   left: 0.6rem;
+}
+
+/* Filmmakers video: top-right, clear of the player's own title bar on the left */
+.reels .media:has(.filmmakers) .copyright {
+  right: 0.6rem;
+  left: auto;
 }
 
 /* Audios: a line under the player */

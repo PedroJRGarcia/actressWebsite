@@ -5,6 +5,11 @@ import headshot from '../assets/headshot.webp'
 // Files placed in /public are served from the site root (BASE_URL handles GitHub Pages sub-paths)
 const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
+// Filmmakers video player address. `id` comes from the embed code: …/elina-fernandez/video/<id>?…
+// background_color=121212 = the site's dark background (the player then uses white text)
+const filmmakers = (id: number, playlist = false) =>
+  `https://www.filmmakers.eu/es/actors/elina-fernandez/video/${id}?autoplay=false&background_color=121212&iframe=v2${playlist ? '&playlist=h' : ''}`
+
 // A showreel is one of:
 // - Filmmakers: the src="..." address from the Filmmakers embed (iframe) code
 // - Self-hosted: an H.264 .mp4 in public/videos/ (keep each file under 100 MB for GitHub)
@@ -13,6 +18,9 @@ type Showreel = { title: string; copyright: string } & ({ filmmakersUrl: string 
 // Copyright: the author shown as "© …" on each photo, video and audio. Change it per file.
 // COPYRIGHT is the default; replace it on any item with the real author, e.g. copyright: 'Anna Schmidt'
 const COPYRIGHT = 'Elina Fernandez'
+
+// An audio file stored on Filmmakers
+const filmmakersAudio = (code: string) => `https://static.filmmakers.eu/production/${code}.mp3`
 
 const showreels: Showreel[] = [
   {
@@ -35,8 +43,8 @@ const showreels: Showreel[] = [
   },
   {
     title: 'Geschwister',
-    filmmakersUrl:
-      'https://www.filmmakers.eu/es/actors/elina-fernandez/video/121502?autoplay=false&background_color=none&iframe=v2&playlist=h',
+    // playlist: the player shows the clips of this group as thumbnails to switch between
+    filmmakersUrl: filmmakers(121502, true),
     copyright: COPYRIGHT,
   },
   // Self-hosted example: add public/videos/comedy.mp4 (and optionally a poster image), then uncomment
@@ -72,9 +80,32 @@ export const profile = {
     { src: publicFile('photos/11.webp'), copyright: 'Hugo Sánchez' },
     { src: publicFile('photos/12.webp'), copyright: 'Hugo Sánchez' },
   ],
+  // "Audio" section: the audio files hosted on Filmmakers, played with the site's own player.
+  // To add one: open its Filmmakers embed address, find the ".mp3" link (static.filmmakers.eu/production/<code>.mp3)
+  // and paste the <code> here
   voicereels: [
-    { title: 'Audio1', src: publicFile('audios/commercial-en.mp3'), copyright: COPYRIGHT },
-    { title: 'Audio2', src: publicFile('audios/narration-de.mp3'), copyright: COPYRIGHT },
+    {
+      title: 'Hundert Jahre Einsamkeit (DE)',
+      src: filmmakersAudio('695eedfd-4c02-4367-9b22-48feb37d13d3'),
+      copyright: COPYRIGHT,
+    },
+    {
+      title: 'Cien años de soledad (ES)',
+      src: filmmakersAudio('87d8682b-82f5-47cd-9e58-18ae842c2283'),
+      copyright: COPYRIGHT,
+    },
+    { title: 'La vida es sueño', src: filmmakersAudio('cd0cf919-eeab-4110-9537-cc96c2a368cb'), copyright: COPYRIGHT },
+    {
+      title: 'Spiegel im Spiegel (DE)',
+      src: filmmakersAudio('136d0be7-bf79-4fd3-8a88-8087317c187f'),
+      copyright: COPYRIGHT,
+    },
+    { title: 'Nachricht (DE)', src: filmmakersAudio('d2a9c27e-8fc9-4995-aa7c-31a13f554597'), copyright: COPYRIGHT },
+    {
+      title: 'Comercial - Werbung Spanisch',
+      src: filmmakersAudio('bb5bf990-665b-4f62-9340-ca875f9bd021'),
+      copyright: COPYRIGHT,
+    },
   ],
   // "Vita" section: one dropdown per group, shown in this order: training, film, theater
   credits: {
