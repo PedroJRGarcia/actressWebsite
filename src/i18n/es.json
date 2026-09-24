@@ -1,9 +1,9 @@
 {
   "nav": {
     "home": "Inicio",
-    "showreels": "Videobook",
+    "showreels": "Showreels",
     "gallery": "Galería",
-    "voicereels": "Voz",
+    "voicereels": "Audio",
     "credits": "Trayectoria",
     "contact": "Contacto"
   },
