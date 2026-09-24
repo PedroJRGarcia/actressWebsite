@@ -108,16 +108,16 @@ h2 {
   gap: 0.5rem 1.5rem;
   padding: 0.75rem 1.5rem;
   /* Over the start photo: transparent, blends with the picture */
-  background: linear-gradient(rgb(0 0 0 / 0.85), transparent);
+  background: linear-gradient(rgb(0 0 0 / 0.7), transparent);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
 }
 
 /* Over the photo: white text with a soft shadow so it stays readable */
 .header:not(.solid) .nav a:not(.button),
-.header:not(.solid) .lang button,
-.header:not(.solid) .menu-toggle {
-  text-shadow: 0 1px 6px rgb(0 0 0 / 0.9);
+.header:not(.solid) .lang button {
+  color: #fff;
+  text-shadow: 0 1px 6px rgb(0 0 0 / 0.8);
 }
 
 /* After scrolling (or with the mobile menu open): solid, readable over any section */
@@ -139,32 +139,30 @@ h2 {
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  font-size: 1rem;
-  font-weight: 500;
+  font-size: 0.9rem;
 }
 
 .nav a:not(.button) {
   white-space: nowrap;
-  color: var(--text);
+  color: var(--muted);
   text-decoration: none;
-  transition: color 0.2s;
 }
 
 .nav a:not(.button):hover {
-  color: var(--accent);
+  color: var(--text);
 }
 
 .lang {
   display: flex;
   align-items: center;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 .lang button {
   padding: 0.25rem;
   border: none;
   background: none;
-  color: rgb(255 255 255 / 0.7);
+  color: var(--muted);
   cursor: pointer;
 }
 
@@ -181,7 +179,7 @@ h2 {
 .menu-toggle {
   display: none;
   padding: 0.25rem 0.5rem;
-  border: 1px solid rgb(255 255 255 / 0.5);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   background: none;
   color: var(--text);
