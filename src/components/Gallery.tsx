@@ -1,10 +1,6 @@
 import React from 'react'
 import { profile } from '../data/profile'
-import type { Translation } from '../i18n'
-
-interface Props {
-  t: Translation
-}
+import type { SectionProps } from '../i18n'
 
 const { photos } = profile
 
@@ -12,7 +8,7 @@ const { photos } = profile
 const step = (index: number | null, direction: number) =>
   index === null ? null : (index + direction + photos.length) % photos.length
 
-export const Gallery: React.FC<Props> = ({ t }) => {
+export const Gallery: React.FC<SectionProps> = ({ t }) => {
   const [index, setIndex] = React.useState<number | null>(null)
   const touchStartX = React.useRef(0)
   const isOpen = index !== null

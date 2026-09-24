@@ -1,12 +1,8 @@
 import React from 'react'
 import { profile } from '../data/profile'
-import type { Translation } from '../i18n'
+import type { SectionProps } from '../i18n'
 
-interface Props {
-  t: Translation
-}
-
-export const Contact: React.FC<Props> = ({ t }) => (
+export const Contact: React.FC<SectionProps> = ({ t }) => (
   <section id='contact' className='contact'>
     <h2>{t.nav.contact}</h2>
     <p>

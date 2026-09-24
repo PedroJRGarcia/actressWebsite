@@ -1,12 +1,8 @@
 import React from 'react'
 import { profile } from '../data/profile'
-import type { Translation } from '../i18n'
+import type { SectionProps } from '../i18n'
 
-interface Props {
-  t: Translation
-}
-
-export const Showreels: React.FC<Props> = ({ t }) => (
+export const Showreels: React.FC<SectionProps> = ({ t }) => (
   <section id='showreels'>
     <h2>{t.nav.showreels}</h2>
     <div className='reels'>

@@ -1,12 +1,8 @@
 import React from 'react'
 import { profile } from '../data/profile'
-import type { Translation } from '../i18n'
+import type { SectionProps } from '../i18n'
 
-interface Props {
-  t: Translation
-}
-
-export const Credits: React.FC<Props> = ({ t }) => (
+export const Credits: React.FC<SectionProps> = ({ t }) => (
   <section id='credits'>
     <h2>{t.nav.credits}</h2>
     <div className='table-wrapper'>
