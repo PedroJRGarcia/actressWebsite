@@ -11,28 +11,99 @@
   "resume": "Descargar CV",
   "role": "Actriz",
   "watchReel": "Ver videobook ▶",
-  "events": { "title": "Próximos eventos", "more": "Más info" },
+  "events": {
+    "title": "Próximos eventos",
+    "more": "Más info"
+  },
+  "filmmakersConsent": {
+    "text": "Este vídeo se carga desde Filmmakers. Al cargarlo se envían tu dirección IP y datos técnicos a Filmmakers (ver Política de privacidad).",
+    "button": "Cargar vídeo ▶"
+  },
   "about": {
     "title": "Sobre mí",
     "text": "Soy actriz, vivo en Múnich y trabajo en alemán, inglés y español. Aquí va un breve texto sobre mi formación, mi experiencia y lo que me hace única."
   },
   "stats": [
-    { "label": "Edad escénica", "value": "24 – 32" },
-    { "label": "Altura", "value": "160 cm" },
-    { "label": "Ojos / Pelo", "value": "Verdes / Castaño" },
-    { "label": "Idiomas", "value": "Alemán, inglés, español" },
-    { "label": "Residencia", "value": "Múnich" },
-    { "label": "Disponible en", "value": "Europa" }
+    {
+      "label": "Edad escénica",
+      "value": "24 – 32"
+    },
+    {
+      "label": "Altura",
+      "value": "160 cm"
+    },
+    {
+      "label": "Ojos / Pelo",
+      "value": "Verdes / Castaño"
+    },
+    {
+      "label": "Idiomas",
+      "value": "Alemán, inglés, español"
+    },
+    {
+      "label": "Residencia",
+      "value": "Múnich"
+    },
+    {
+      "label": "Disponible en",
+      "value": "Europa"
+    }
   ],
-  "creditsTable": { "year": "Año", "project": "Proyecto", "role": "Papel", "director": "Dirección / Producción", "school": "Escuela / Institución" },
-  "vita": { "training": "Formación", "film": "Cine", "theater": "Teatro" },
-  "contact": { "email": "Email", "agency": "Agencia" },
+  "creditsTable": {
+    "year": "Año",
+    "project": "Proyecto",
+    "role": "Papel",
+    "director": "Dirección / Producción",
+    "school": "Escuela / Institución"
+  },
+  "vita": {
+    "training": "Formación",
+    "film": "Cine",
+    "theater": "Teatro"
+  },
+  "contact": {
+    "email": "Email",
+    "agency": "Agencia"
+  },
   "footer": {
     "rights": "Todos los derechos reservados.",
     "createdBy": "Web creada por",
     "impressum": "Aviso legal (Impressum)",
-    "impressumText": "Información según § 5 DDG: Elina Surname, Street 1, 10115 Berlín, Alemania. Email: elina@example.com",
+    "impressumText": "Información según § 5 DDG: Elina Fernandez, [falta calle y número], 81371 Múnich, Alemania. Email: [falta]",
     "privacy": "Política de privacidad",
-    "privacyText": "Esta web no usa cookies ni recoge datos personales. Los vídeos y audios se sirven desde esta web o se cargan desde Filmmakers (filmmakers.eu); al cargar un vídeo o audio de Filmmakers, Filmmakers recibe tu dirección IP y puede instalar sus propias cookies. Para un contador anónimo de visitas, al abrir la página se envía una petición a abacus.jasoncameron.dev, que recibe tu dirección IP. El contador no instala cookies."
+    "privacySections": [
+      {
+        "title": "1. Responsable",
+        "text": "La responsable del tratamiento de datos en esta web es la persona indicada en el aviso legal (Impressum). Para cualquier consulta sobre privacidad, escríbeme a la dirección de correo que figura allí."
+      },
+      {
+        "title": "2. Alojamiento (GitHub Pages)",
+        "text": "Esta web está alojada en GitHub Pages, un servicio de GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, EE. UU. Al visitarla, GitHub trata datos técnicamente necesarios (registros del servidor), en particular tu dirección IP, fecha y hora del acceso, la página solicitada, la página de procedencia, y tu navegador y sistema operativo. Es necesario para servir la web y garantizar su seguridad (art. 6.1.f RGPD). La transferencia a EE. UU. se basa en el Marco de Privacidad de Datos UE-EE. UU. o en las cláusulas contractuales tipo de la UE. Más información: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+      },
+      {
+        "title": "3. Sin cookies ni seguimiento",
+        "text": "Esta web no instala cookies propias ni usa servicios de análisis o seguimiento. Las fuentes tipográficas se cargan desde esta misma web, no desde proveedores externos."
+      },
+      {
+        "title": "4. Vídeos y audios de Filmmakers",
+        "text": "Algunos vídeos y todos los audios se cargan desde Filmmakers Europe, un servicio de filmmakers.one GmbH, Gocher Str. 19, 50733 Colonia, Alemania. Solo cuando haces clic en «Cargar vídeo» en el vídeo de Filmmakers o reproduces un audio, tu navegador se conecta a los servidores de Filmmakers (antes no se envía ningún dato a Filmmakers) y les transmite tu dirección IP y datos técnicos (p. ej. navegador, hora). Filmmakers puede instalar sus propias cookies y recurrir a proveedores de servicios (p. ej. para el análisis de errores). Se integran para presentar mi trabajo como actriz de forma atractiva (art. 6.1.a RGPD, tu consentimiento con el clic, y art. 6.1.f RGPD). Más información: https://www.filmmakers.eu/es/privacy"
+      },
+      {
+        "title": "5. Enlaces a otras webs",
+        "text": "Los enlaces a otras webs (p. ej. IMDb, Instagram, Crew United, Filmmakers) son simples enlaces. No se envía ningún dato a esos proveedores hasta que haces clic; a partir de ahí se aplica su política de privacidad."
+      },
+      {
+        "title": "6. Contacto por correo electrónico",
+        "text": "Si me escribes un correo, uso tus datos solo para responder a tu consulta (art. 6.1.b o f RGPD). Se borran cuando ya no son necesarios para ello y no existe obligación legal de conservarlos."
+      },
+      {
+        "title": "7. Tus derechos",
+        "text": "Tienes derecho de acceso (art. 15 RGPD), rectificación (art. 16), supresión (art. 17), limitación del tratamiento (art. 18), portabilidad (art. 20) y oposición al tratamiento (art. 21). También puedes presentar una reclamación ante una autoridad de protección de datos (art. 77 RGPD)."
+      },
+      {
+        "title": "",
+        "text": "Última actualización: septiembre de 2026"
+      }
+    ]
   }
 }

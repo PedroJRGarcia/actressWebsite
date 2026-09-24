@@ -4,10 +4,21 @@ import { Credits } from './components/Credits'
 import { Gallery } from './components/Gallery'
 import { Home } from './components/Home'
 import { Showreels } from './components/Showreels'
-import { VisitorDot } from './components/VisitorDot'
 import { Voicereels } from './components/Voicereels'
 import { profile } from './data/profile'
 import { defaultLang, languages, translations, type Lang } from './i18n'
+
+// Turns the web addresses inside a text into links
+const withLinks = (text: string) =>
+  text.split(/(https:\/\/\S+)/).map((part, index) =>
+    part.startsWith('https://') ? (
+      <a key={index} href={part} target='_blank' rel='noreferrer'>
+        {part.replace('https://', '')}
+      </a>
+    ) : (
+      part
+    ),
+  )
 
 const sections = ['home', 'showreels', 'gallery', 'voicereels', 'credits', 'contact'] as const
 
@@ -83,9 +94,15 @@ export const App: React.FC = () => {
         </details>
         <details>
           <summary>{t.footer.privacy}</summary>
-          <p>{t.footer.privacyText}</p>
+          <div className='privacy'>
+            {t.footer.privacySections.map(section => (
+              <React.Fragment key={section.text}>
+                {section.title && <h3>{section.title}</h3>}
+                <p>{withLinks(section.text)}</p>
+              </React.Fragment>
+            ))}
+          </div>
         </details>
-        <VisitorDot />
       </footer>
     </>
   )

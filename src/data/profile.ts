@@ -128,23 +128,22 @@ export const profile = {
   ] as { date: string; title: string; place: string; url?: string }[],
   // "Vita" section: one dropdown per group, shown in this order: training, film, theater
   credits: {
+    // Dummy text: replace with the real training, films and plays
     training: [
-      // Placeholder: replace with the real schools / workshops
-      { year: '2018 – 2021', title: 'Schauspielstudium', school: 'Schauspielschule München' },
-      { year: 2022, title: 'Camera Acting Workshop', school: 'Film Academy Berlin' },
+      { year: '2016 – 2019', title: 'Lorem ipsum dolor', school: 'Sit Amet Akademie' },
+      { year: 2020, title: 'Consectetur Workshop', school: 'Adipiscing Studio' },
+      { year: 2022, title: 'Elit sed do', school: 'Eiusmod Institut' },
     ],
     film: [
-      { year: 2026, title: 'Cine-Project Berlin', role: 'Lead', director: 'M. Müller', company: 'ZDF / UFA' },
-      { year: 2024, title: 'Indie Short Film', role: 'Lead', director: 'A. Garcia', company: 'Film Academy' },
+      { year: 2025, title: 'Tempor Incididunt', role: 'Lorem', director: 'A. Ipsum', company: 'Dolor Film' },
+      { year: 2024, title: 'Ut Labore', role: 'Ipsum', director: 'B. Magna', company: 'Aliqua Produktion' },
+      { year: 2023, title: 'Enim ad Minim', role: 'Dolor', director: 'C. Veniam', company: 'Quis Pictures' },
+      { year: 2021, title: 'Nostrud Exercitation', role: 'Sit', director: 'D. Ullamco', company: 'Laboris Film' },
     ],
     theater: [
-      {
-        year: 2025,
-        title: 'The London Stage Play',
-        role: 'Supporting',
-        director: 'S. Jenkins',
-        company: 'National Theatre',
-      },
+      { year: 2024, title: 'Duis Aute', role: 'Amet', director: 'E. Irure', company: 'Teatro Reprehenderit' },
+      { year: 2022, title: 'Voluptate Velit', role: 'Lorem', director: 'F. Esse', company: 'Cillum Bühne' },
+      { year: 2019, title: 'Fugiat Nulla', role: 'Ipsum', director: 'G. Pariatur', company: 'Excepteur Theater' },
     ],
   },
 }

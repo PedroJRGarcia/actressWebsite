@@ -7,8 +7,14 @@ const filmmakersProfile = profile.links.find(link => link.label === 'Filmmakers'
 // Filmmakers player with our own buttons to switch group (2023, About me…).
 // The player's own top bar (name + a menu listing every video and audio) is cropped off,
 // and a small "Filmmakers" link takes its place.
-const FilmmakersPlayer: React.FC<{ groups: { label: string; id: number }[]; title: string }> = ({ groups, title }) => {
+// Privacy: nothing is loaded from Filmmakers until the visitor clicks "Load video" (click to load).
+const FilmmakersPlayer: React.FC<SectionProps & { groups: { label: string; id: number }[]; title: string }> = ({
+  t,
+  groups,
+  title,
+}) => {
   const [active, setActive] = React.useState(groups[0].id)
+  const [loaded, setLoaded] = React.useState(false)
   return (
     <>
       {groups.length > 1 && (
@@ -22,14 +28,22 @@ const FilmmakersPlayer: React.FC<{ groups: { label: string; id: number }[]; titl
       )}
       <div className='media'>
         <div className='filmmakers-crop'>
-          <iframe
-            className='filmmakers'
-            src={filmmakersVideo(active)}
-            title={title}
-            loading='lazy'
-            allow='fullscreen; picture-in-picture'
-            allowFullScreen
-          />
+          {loaded ? (
+            <iframe
+              className='filmmakers'
+              src={filmmakersVideo(active)}
+              title={title}
+              allow='fullscreen; picture-in-picture'
+              allowFullScreen
+            />
+          ) : (
+            <div className='click-to-load'>
+              <p>{t.filmmakersConsent.text}</p>
+              <button className='button' onClick={() => setLoaded(true)}>
+                {t.filmmakersConsent.button}
+              </button>
+            </div>
+          )}
         </div>
         <a className='filmmakers-badge' href={filmmakersProfile} target='_blank' rel='noreferrer'>
           Filmmakers ↗
@@ -51,7 +65,7 @@ export const Showreels: React.FC<SectionProps> = ({ t }) => (
               <small className='copyright'>© {reel.copyright}</small>
             </div>
           ) : (
-            <FilmmakersPlayer groups={reel.filmmakers} title={reel.title} />
+            <FilmmakersPlayer t={t} groups={reel.filmmakers} title={reel.title} />
           )}
           <figcaption>
             {reel.title}

@@ -11,28 +11,99 @@
   "resume": "Download Resume",
   "role": "Actress",
   "watchReel": "Watch Showreel ▶",
-  "events": { "title": "Upcoming events", "more": "More info" },
+  "events": {
+    "title": "Upcoming events",
+    "more": "More info"
+  },
+  "filmmakersConsent": {
+    "text": "This video is loaded from Filmmakers. Loading it sends your IP address and technical data to Filmmakers (see Privacy policy).",
+    "button": "Load video ▶"
+  },
   "about": {
     "title": "About me",
     "text": "I am an actress based in Munich, working in German, English and Spanish. This is a short text about my training, my experience and what makes me unique."
   },
   "stats": [
-    { "label": "Playing age", "value": "24 – 32" },
-    { "label": "Height", "value": "160 cm" },
-    { "label": "Eyes / Hair", "value": "Green / Brown" },
-    { "label": "Languages", "value": "German, English, Spanish" },
-    { "label": "Based in", "value": "Munich" },
-    { "label": "Available in", "value": "Europe" }
+    {
+      "label": "Playing age",
+      "value": "24 – 32"
+    },
+    {
+      "label": "Height",
+      "value": "160 cm"
+    },
+    {
+      "label": "Eyes / Hair",
+      "value": "Green / Brown"
+    },
+    {
+      "label": "Languages",
+      "value": "German, English, Spanish"
+    },
+    {
+      "label": "Based in",
+      "value": "Munich"
+    },
+    {
+      "label": "Available in",
+      "value": "Europe"
+    }
   ],
-  "creditsTable": { "year": "Year", "project": "Project", "role": "Role", "director": "Director / Production", "school": "School / Institution" },
-  "vita": { "training": "Training", "film": "Film", "theater": "Theatre" },
-  "contact": { "email": "Email", "agency": "Agency" },
+  "creditsTable": {
+    "year": "Year",
+    "project": "Project",
+    "role": "Role",
+    "director": "Director / Production",
+    "school": "School / Institution"
+  },
+  "vita": {
+    "training": "Training",
+    "film": "Film",
+    "theater": "Theatre"
+  },
+  "contact": {
+    "email": "Email",
+    "agency": "Agency"
+  },
   "footer": {
     "rights": "All Rights Reserved.",
     "createdBy": "Website created by",
     "impressum": "Impressum",
-    "impressumText": "Information according to § 5 DDG: Elina Surname, Street 1, 10115 Berlin, Germany. Email: elina@example.com",
+    "impressumText": "Information according to § 5 DDG: Elina Fernandez, [street and number missing], 81371 Munich, Germany. Email: [missing]",
     "privacy": "Privacy Policy",
-    "privacyText": "This website does not use cookies or collect personal data. Videos and audios are either served directly from this website or loaded from Filmmakers (filmmakers.eu); when a Filmmakers video or audio loads, Filmmakers receives your IP address and may set its own cookies. For an anonymous visitor counter, opening the page sends a request to abacus.jasoncameron.dev, which receives your IP address. The counter sets no cookies."
+    "privacySections": [
+      {
+        "title": "1. Controller",
+        "text": "The person named in the Legal notice (Impressum) is responsible for data processing on this website. For privacy questions, please use the email address given there."
+      },
+      {
+        "title": "2. Hosting (GitHub Pages)",
+        "text": "This website is hosted on GitHub Pages, a service of GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When you visit the site, GitHub processes technically necessary data (server log files), in particular your IP address, date and time of access, the page requested, the referring page, and your browser and operating system. This is required to deliver the website and keep it secure (Art. 6(1)(f) GDPR). Transfers to the USA are based on the EU-US Data Privacy Framework or the EU Standard Contractual Clauses. More information: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+      },
+      {
+        "title": "3. No cookies, no tracking",
+        "text": "This website itself sets no cookies and uses no analytics or tracking services. Fonts are loaded from this website, not from external providers."
+      },
+      {
+        "title": "4. Videos and audios from Filmmakers",
+        "text": "Some videos and all audios are loaded from Filmmakers Europe, a service of filmmakers.one GmbH, Gocher Str. 19, 50733 Cologne, Germany. Only when you click “Load video” on the Filmmakers video or play an audio does your browser connect to Filmmakers' servers (no data is sent to Filmmakers before that), transmitting your IP address and technical data (e.g. browser, time). Filmmakers may set its own cookies and use service providers (e.g. for error analysis). They are embedded to present my work as an actress attractively (Art. 6(1)(a) GDPR, your consent by clicking, and Art. 6(1)(f) GDPR). More information: https://www.filmmakers.eu/en/privacy"
+      },
+      {
+        "title": "5. Links to other websites",
+        "text": "Links to other websites (e.g. IMDb, Instagram, Crew United, Filmmakers) are plain links. No data is sent to these providers until you click a link; their privacy policies then apply."
+      },
+      {
+        "title": "6. Contact by email",
+        "text": "If you email me, I use your details only to answer your request (Art. 6(1)(b) or (f) GDPR). The data is deleted once it is no longer needed for that purpose and no legal retention obligations apply."
+      },
+      {
+        "title": "7. Your rights",
+        "text": "You have the right to access (Art. 15 GDPR), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing (Art. 21). You may also lodge a complaint with a data protection supervisory authority (Art. 77 GDPR)."
+      },
+      {
+        "title": "",
+        "text": "Last updated: September 2026"
+      }
+    ]
   }
 }

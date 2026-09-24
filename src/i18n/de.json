@@ -11,28 +11,99 @@
   "resume": "Vita herunterladen",
   "role": "Schauspielerin",
   "watchReel": "Showreel ansehen ▶",
-  "events": { "title": "Termine", "more": "Mehr Infos" },
+  "events": {
+    "title": "Termine",
+    "more": "Mehr Infos"
+  },
+  "filmmakersConsent": {
+    "text": "Dieses Video wird von Filmmakers geladen. Dabei werden Ihre IP-Adresse und technische Daten an Filmmakers übertragen (siehe Datenschutzerklärung).",
+    "button": "Video laden ▶"
+  },
   "about": {
     "title": "Über mich",
     "text": "Ich bin Schauspielerin mit Sitz in München und spiele auf Deutsch, Englisch und Spanisch. Hier steht ein kurzer Text über meine Ausbildung, meine Erfahrung und was mich ausmacht."
   },
   "stats": [
-    { "label": "Spielalter", "value": "24 – 32" },
-    { "label": "Größe", "value": "160 cm" },
-    { "label": "Augen / Haare", "value": "Grün / Braun" },
-    { "label": "Sprachen", "value": "Deutsch, Englisch, Spanisch" },
-    { "label": "Wohnort", "value": "München" },
-    { "label": "Verfügbar in", "value": "Europa" }
+    {
+      "label": "Spielalter",
+      "value": "24 – 32"
+    },
+    {
+      "label": "Größe",
+      "value": "160 cm"
+    },
+    {
+      "label": "Augen / Haare",
+      "value": "Grün / Braun"
+    },
+    {
+      "label": "Sprachen",
+      "value": "Deutsch, Englisch, Spanisch"
+    },
+    {
+      "label": "Wohnort",
+      "value": "München"
+    },
+    {
+      "label": "Verfügbar in",
+      "value": "Europa"
+    }
   ],
-  "creditsTable": { "year": "Jahr", "project": "Projekt", "role": "Rolle", "director": "Regie / Produktion", "school": "Schule / Institution" },
-  "vita": { "training": "Ausbildung", "film": "Film", "theater": "Theater" },
-  "contact": { "email": "E-Mail", "agency": "Agentur" },
+  "creditsTable": {
+    "year": "Jahr",
+    "project": "Projekt",
+    "role": "Rolle",
+    "director": "Regie / Produktion",
+    "school": "Schule / Institution"
+  },
+  "vita": {
+    "training": "Ausbildung",
+    "film": "Film",
+    "theater": "Theater"
+  },
+  "contact": {
+    "email": "E-Mail",
+    "agency": "Agentur"
+  },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",
     "createdBy": "Website erstellt von",
     "impressum": "Impressum",
-    "impressumText": "Angaben gemäß § 5 DDG: Elina Surname, Straße 1, 10115 Berlin, Deutschland. E-Mail: elina@example.com",
+    "impressumText": "Angaben gemäß § 5 DDG: Elina Fernandez, [Straße und Hausnummer fehlen], 81371 München, Deutschland. E-Mail: [fehlt]",
     "privacy": "Datenschutzerklärung",
-    "privacyText": "Diese Website verwendet keine Cookies und erhebt keine personenbezogenen Daten. Videos und Audios werden direkt von dieser Website bereitgestellt oder von Filmmakers (filmmakers.eu) geladen; beim Laden eines Filmmakers-Videos oder -Audios erhält Filmmakers Ihre IP-Adresse und kann eigene Cookies setzen. Für einen anonymen Besucherzähler wird beim Aufruf der Seite eine Anfrage an abacus.jasoncameron.dev gesendet; dabei wird Ihre IP-Adresse übertragen. Der Zähler setzt keine Cookies."
+    "privacySections": [
+      {
+        "title": "1. Verantwortliche",
+        "text": "Verantwortlich für die Datenverarbeitung auf dieser Website ist die im Impressum genannte Person. Bei Fragen zum Datenschutz erreichen Sie mich unter der dort angegebenen E-Mail-Adresse."
+      },
+      {
+        "title": "2. Hosting (GitHub Pages)",
+        "text": "Diese Website wird bei GitHub Pages gehostet, einem Dienst der GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Website verarbeitet GitHub technisch notwendige Daten (Server-Logfiles), insbesondere Ihre IP-Adresse, Datum und Uhrzeit des Zugriffs, die aufgerufene Seite, die zuvor besuchte Seite (Referrer) sowie Browser und Betriebssystem. Dies ist erforderlich, um die Website auszuliefern und ihre Sicherheit zu gewährleisten (Art. 6 Abs. 1 lit. f DSGVO). Die Übermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework bzw. der EU-Standardvertragsklauseln. Weitere Informationen: https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement"
+      },
+      {
+        "title": "3. Keine Cookies, kein Tracking",
+        "text": "Diese Website selbst setzt keine Cookies und verwendet keine Analyse- oder Tracking-Dienste. Schriftarten werden direkt von dieser Website geladen, nicht von externen Anbietern."
+      },
+      {
+        "title": "4. Videos und Audios von Filmmakers",
+        "text": "Einige Videos und alle Audios werden von Filmmakers Europe geladen, einem Dienst der filmmakers.one GmbH, Gocher Str. 19, 50733 Köln, Deutschland. Erst wenn Sie beim Filmmakers-Video auf „Video laden“ klicken oder ein Audio abspielen, stellt Ihr Browser eine Verbindung zu den Servern von Filmmakers her; vorher werden keine Daten an Filmmakers übertragen. Dabei werden Ihre IP-Adresse und technische Daten (z. B. Browser, Uhrzeit) übermittelt. Filmmakers kann eigene Cookies setzen und Dienstleister einsetzen (z. B. zur Fehleranalyse). Die Einbindung erfolgt, um meine Arbeit als Schauspielerin ansprechend zu präsentieren (Art. 6 Abs. 1 lit. a DSGVO, Ihre Einwilligung durch den Klick, sowie Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen: https://www.filmmakers.eu/de/privacy"
+      },
+      {
+        "title": "5. Links zu anderen Websites",
+        "text": "Links zu anderen Websites (z. B. IMDb, Instagram, Crew United, Filmmakers) sind einfache Verweise. Daten werden an diese Anbieter erst übermittelt, wenn Sie einen Link anklicken; dann gilt deren Datenschutzerklärung."
+      },
+      {
+        "title": "6. Kontakt per E-Mail",
+        "text": "Wenn Sie mir eine E-Mail schreiben, verarbeite ich Ihre Angaben nur, um Ihre Anfrage zu beantworten (Art. 6 Abs. 1 lit. b bzw. f DSGVO). Die Daten werden gelöscht, sobald sie dafür nicht mehr benötigt werden und keine gesetzlichen Aufbewahrungspflichten bestehen."
+      },
+      {
+        "title": "7. Ihre Rechte",
+        "text": "Sie haben das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen die Verarbeitung (Art. 21). Außerdem können Sie sich bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77 DSGVO)."
+      },
+      {
+        "title": "",
+        "text": "Stand: September 2026"
+      }
+    ]
   }
 }
