@@ -16,7 +16,7 @@ export const Contact: React.FC<SectionProps> = ({ t }) => (
     </p>
     <div className='links'>
       {profile.links.map(link => (
-        <a key={link.label} className='chip' href={link.url} target='_blank' rel='noreferrer'>
+        <a key={link.label} className='button' href={link.url} target='_blank' rel='noreferrer'>
           {link.label}
         </a>
       ))}
