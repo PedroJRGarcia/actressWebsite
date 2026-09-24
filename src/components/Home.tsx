@@ -8,22 +8,30 @@ interface Props {
 
 export const Home: React.FC<Props> = ({ t }) => (
   <section id='home' className='home'>
-    <img className='home-headshot' src={profile.headshot} alt={profile.name} />
-    <div>
+    <div className='prints'>
+      {profile.homePhotos.map((photo, index) => (
+        <figure key={`${index}-${photo}`} className='print'>
+          <img src={photo} alt={`${profile.name} ${index + 1}`} />
+        </figure>
+      ))}
+    </div>
+
+    <div className='home-info'>
       <h1>{profile.name}</h1>
       <p className='home-role'>{t.role}</p>
       <p className='muted'>{t.basedIn}</p>
-      <dl className='stats'>
-        {t.stats.map(stat => (
-          <div key={stat.label}>
-            <dt>{stat.label}</dt>
-            <dd>{stat.value}</dd>
-          </div>
-        ))}
-      </dl>
       <a className='button' href='#showreels'>
         {t.watchReel}
       </a>
     </div>
+
+    <dl className='stats'>
+      {t.stats.map(stat => (
+        <div key={stat.label}>
+          <dt>{stat.label}</dt>
+          <dd>{stat.value}</dd>
+        </div>
+      ))}
+    </dl>
   </section>
 )
