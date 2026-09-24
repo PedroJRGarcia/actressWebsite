@@ -107,8 +107,9 @@ h2 {
   align-items: center;
   gap: 0.5rem 1.5rem;
   padding: 0.75rem 1.5rem;
-  /* Over the start photo: transparent, blends with the picture */
-  background: linear-gradient(rgb(0 0 0 / 0.7), transparent);
+  /* Over the start photo: slightly opaque, the picture still shows through */
+  background: rgb(0 0 0 / 0.35);
+  backdrop-filter: blur(4px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s;
 }
