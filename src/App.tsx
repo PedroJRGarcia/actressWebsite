@@ -13,15 +13,23 @@ const sections = ['home', 'showreels', 'gallery', 'voicereels', 'credits', 'cont
 export const App: React.FC = () => {
   const [lang, setLang] = React.useState<Lang>(defaultLang)
   const [menuOpen, setMenuOpen] = React.useState(false)
+  const [scrolled, setScrolled] = React.useState(false)
   const t = translations[lang]
 
   React.useEffect(() => {
     document.documentElement.lang = lang
   }, [lang])
 
+  // Header is transparent over the start photo and turns solid once the page scrolls
+  React.useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <>
-      <header className='header'>
+      <header className={scrolled || menuOpen ? 'header solid' : 'header'}>
         <a className='logo' href='#home'>
           {profile.name}
         </a>
