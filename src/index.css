@@ -316,79 +316,15 @@ main .hero {
   }
 }
 
-/* ABOUT: prints + short text, details below */
+/* ABOUT: short text, details below */
 .about {
   display: grid;
-  grid-template-columns: 3fr 2fr;
-  align-items: center;
   gap: 3rem 2.5rem;
 }
 
 .about-text {
   font-size: 1.1rem;
   line-height: 1.7;
-}
-
-/* 3 developed prints with different shapes, scattered on a square canvas */
-.prints {
-  position: relative;
-  aspect-ratio: 1;
-}
-
-.print {
-  position: absolute;
-  padding: 2% 2% 7%; /* thicker bottom border, like a developed photo */
-  background: #f4f1ea;
-  box-shadow: 0 12px 30px rgb(0 0 0 / 0.5);
-  transition:
-    rotate 0.3s,
-    scale 0.3s;
-}
-
-.print img {
-  width: 100%;
-  object-fit: cover;
-  object-position: center 25%; /* keeps faces in frame */
-}
-
-.print:hover {
-  z-index: 2;
-  rotate: 0deg;
-  scale: 1.04;
-}
-
-.print:nth-child(1) {
-  top: 6%;
-  left: 0;
-  width: 48%;
-  rotate: -4deg;
-}
-
-.print:nth-child(1) img {
-  aspect-ratio: 3 / 4;
-}
-
-.print:nth-child(2) {
-  top: 0;
-  right: 0;
-  width: 44%;
-  rotate: 3deg;
-}
-
-.print:nth-child(2) img {
-  aspect-ratio: 1;
-}
-
-.print:nth-child(3) {
-  right: 4%;
-  bottom: 0;
-  z-index: 1;
-  width: 54%;
-  rotate: -2deg;
-}
-
-.print:nth-child(3) img {
-  aspect-ratio: 4 / 3;
 }
 
 /* Physical details, languages, location: under the text */
@@ -612,7 +548,6 @@ th {
     padding: 0.75rem 1rem;
   }
 
-  .about,
   .reels {
     grid-template-columns: 1fr;
   }
