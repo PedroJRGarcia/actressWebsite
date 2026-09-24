@@ -45,7 +45,6 @@ export const App: React.FC = () => {
           </a>
         </nav>
         <div className='lang'>
-          🌐
           {languages.map(code => (
             <button key={code} className={code === lang ? 'active' : ''} onClick={() => setLang(code)}>
               {code.toUpperCase()}
