@@ -40,8 +40,9 @@ export const Gallery: React.FC<SectionProps> = ({ t }) => {
       <h2>{t.nav.gallery}</h2>
       <div className='gallery'>
         {photos.map((photo, i) => (
-          <button key={photo} onClick={() => setIndex(i)}>
-            <img src={photo} alt={`${profile.name} ${i + 1}`} loading='lazy' />
+          <button key={photo.src} onClick={() => setIndex(i)}>
+            <img src={photo.src} alt={`${profile.name} ${i + 1}`} loading='lazy' />
+            <small className='copyright'>© {photo.copyright}</small>
           </button>
         ))}
       </div>
@@ -55,7 +56,10 @@ export const Gallery: React.FC<SectionProps> = ({ t }) => {
           onClick={() => setIndex(null)}
           onTouchStart={event => (touchStartX.current = event.touches[0].clientX)}
           onTouchEnd={onTouchEnd}>
-          <img src={photos[index]} alt={`${profile.name} ${index + 1}`} onClick={event => event.stopPropagation()} />
+          <figure className='media' onClick={event => event.stopPropagation()}>
+            <img src={photos[index].src} alt={`${profile.name} ${index + 1}`} />
+            <small className='copyright'>© {photos[index].copyright}</small>
+          </figure>
           <button className='lightbox-close' aria-label='Close'>
             ✕
           </button>
@@ -63,7 +67,7 @@ export const Gallery: React.FC<SectionProps> = ({ t }) => {
           <div className='lightbox-dots' onClick={event => event.stopPropagation()}>
             {photos.map((photo, i) => (
               <button
-                key={photo}
+                key={photo.src}
                 className={i === index ? 'active' : ''}
                 aria-label={`${i + 1} / ${photos.length}`}
                 onClick={() => setIndex(i)}

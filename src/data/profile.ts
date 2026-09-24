@@ -9,21 +9,38 @@ const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
 // - Vimeo: the number in vimeo.com/123456789
 // - Filmmakers: the src="..." address from the Filmmakers embed (iframe) code
 // - Self-hosted: an H.264 .mp4 in public/videos/ (keep each file under 100 MB for GitHub)
-type Showreel = { title: string } & ({ vimeoId: string } | { filmmakersUrl: string } | { src: string; poster?: string })
+type Showreel = { title: string; copyright: string } & (
+  { vimeoId: string } | { filmmakersUrl: string } | { src: string; poster?: string }
+)
+
+// Copyright: the author shown as "© …" on each photo, video and audio. Change it per file.
+// COPYRIGHT is the default; replace it on any item with the real author, e.g. copyright: 'Anna Schmidt'
+const COPYRIGHT = 'Elina Fernandez'
 
 const showreels: Showreel[] = [
-  { title: 'Mitbewohner', src: publicFile('videos/mitbewohner.mp4'), poster: publicFile('videos/mitbewohner.webp') },
-  { title: 'Geschwister', src: publicFile('videos/geschwister.mp4'), poster: publicFile('videos/geschwister.webp') },
+  {
+    title: 'Mitbewohner',
+    src: publicFile('videos/mitbewohner.mp4'),
+    poster: publicFile('videos/mitbewohner.webp'),
+    copyright: COPYRIGHT,
+  },
+  {
+    title: 'Geschwister',
+    src: publicFile('videos/geschwister.mp4'),
+    poster: publicFile('videos/geschwister.webp'),
+    copyright: COPYRIGHT,
+  },
   {
     title: 'Vergewaltigung',
     src: publicFile('videos/vergewaltigung.mp4'),
     poster: publicFile('videos/vergewaltigung.webp'),
+    copyright: COPYRIGHT,
   },
-  { title: 'Showreel 2026', vimeoId: '1084537' },
+  { title: 'Showreel 2026', vimeoId: '1084537', copyright: COPYRIGHT },
   // Filmmakers: paste the real address from the embed code, then uncomment
-  // { title: 'Showreel Filmmakers', filmmakersUrl: 'https://www.filmmakers.eu/…/iframe' },
+  // { title: 'Showreel Filmmakers', filmmakersUrl: 'https://www.filmmakers.eu/…/iframe', copyright: COPYRIGHT },
   // Self-hosted example: add public/videos/comedy.mp4 (and optionally a poster image), then uncomment
-  // { title: 'Comedy', src: publicFile('videos/comedy.mp4'), poster: publicFile('videos/comedy.jpg') },
+  // { title: 'Comedy', src: publicFile('videos/comedy.mp4'), poster: publicFile('videos/comedy.jpg'), copyright: COPYRIGHT },
 ]
 
 export const profile = {
@@ -32,7 +49,7 @@ export const profile = {
   email: 'elina@example.com',
   agency: { name: 'Agency Name', url: 'https://example.com' },
   // Start page: the big photo on arrival (fills the screen, faces are kept in frame)
-  heroPhoto: headshot,
+  heroPhoto: { src: headshot, copyright: COPYRIGHT },
   resume: publicFile('resume.pdf'),
   links: [
     { label: 'IMDb', url: 'https://www.imdb.com' },
@@ -42,22 +59,22 @@ export const profile = {
   ],
   showreels,
   photos: [
-    publicFile('photos/1.webp'),
-    publicFile('photos/2.webp'),
-    publicFile('photos/3.webp'),
-    publicFile('photos/4.webp'),
-    publicFile('photos/5.webp'),
-    publicFile('photos/6.webp'),
-    publicFile('photos/7.webp'),
-    publicFile('photos/8.webp'),
-    publicFile('photos/9.webp'),
-    publicFile('photos/10.webp'),
-    publicFile('photos/11.webp'),
-    publicFile('photos/12.webp'),
+    { src: publicFile('photos/1.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/2.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/3.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/4.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/5.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/6.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/7.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/8.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/9.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/10.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/11.webp'), copyright: COPYRIGHT },
+    { src: publicFile('photos/12.webp'), copyright: COPYRIGHT },
   ],
   voicereels: [
-    { title: 'Audio1', src: publicFile('audios/commercial-en.mp3') },
-    { title: 'Audio2', src: publicFile('audios/narration-de.mp3') },
+    { title: 'Audio1', src: publicFile('audios/commercial-en.mp3'), copyright: COPYRIGHT },
+    { title: 'Audio2', src: publicFile('audios/narration-de.mp3'), copyright: COPYRIGHT },
   ],
   // "Vita" section: one dropdown per group, shown in this order: training, film, theater
   credits: {
