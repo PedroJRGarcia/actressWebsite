@@ -38,7 +38,7 @@ export const profile = {
     { label: 'IMDb', url: 'https://www.imdb.com' },
     { label: 'Filmmakers', url: 'https://www.filmmakers.eu/es/actors/elina-fernandez/' },
     { label: 'Crew United', url: 'https://www.crew-united.com' },
-    { label: 'Instagram', url: 'https://www.instagram.com' },
+    { label: 'Instagram', url: 'https://www.instagram.com/elinaliz/' },
   ],
   showreels,
   photos: [
