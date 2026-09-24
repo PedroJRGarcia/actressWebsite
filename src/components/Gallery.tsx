@@ -33,11 +33,6 @@ export const Gallery: React.FC<Props> = ({ t }) => {
     }
   }, [isOpen])
 
-  const navigate = (direction: number) => (event: React.MouseEvent) => {
-    event.stopPropagation() // don't close the lightbox
-    setIndex(i => step(i, direction))
-  }
-
   // Mobile: swipe left = next photo, swipe right = previous photo
   const onTouchEnd = (event: React.TouchEvent) => {
     const distance = event.changedTouches[0].clientX - touchStartX.current
@@ -68,15 +63,17 @@ export const Gallery: React.FC<Props> = ({ t }) => {
           <button className='lightbox-close' aria-label='Close'>
             ✕
           </button>
-          <button className='lightbox-prev' aria-label='Previous' onClick={navigate(-1)}>
-            ‹
-          </button>
-          <button className='lightbox-next' aria-label='Next' onClick={navigate(1)}>
-            ›
-          </button>
-          <p className='lightbox-counter'>
-            {index + 1} / {photos.length}
-          </p>
+          {/* One dot per photo: click to jump to it */}
+          <div className='lightbox-dots' onClick={event => event.stopPropagation()}>
+            {photos.map((photo, i) => (
+              <button
+                key={photo}
+                className={i === index ? 'active' : ''}
+                aria-label={`${i + 1} / ${photos.length}`}
+                onClick={() => setIndex(i)}
+              />
+            ))}
+          </div>
         </div>
       )}
     </section>
