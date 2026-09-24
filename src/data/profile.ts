@@ -59,15 +59,25 @@ export const profile = {
     { title: 'Audio1', src: publicFile('audios/commercial-en.mp3') },
     { title: 'Audio2', src: publicFile('audios/narration-de.mp3') },
   ],
-  credits: [
-    { year: 2026, title: 'Cine-Project Berlin', role: 'Lead', director: 'M. Müller', company: 'ZDF / UFA' },
-    {
-      year: 2025,
-      title: 'The London Stage Play',
-      role: 'Supporting',
-      director: 'S. Jenkins',
-      company: 'National Theatre',
-    },
-    { year: 2024, title: 'Indie Short Film', role: 'Lead', director: 'A. Garcia', company: 'Film Academy' },
-  ],
+  // "Vita" section: one dropdown per group, shown in this order: training, film, theater
+  credits: {
+    training: [
+      // Placeholder: replace with the real schools / workshops
+      { year: '2018 – 2021', title: 'Schauspielstudium', school: 'Schauspielschule München' },
+      { year: 2022, title: 'Camera Acting Workshop', school: 'Film Academy Berlin' },
+    ],
+    film: [
+      { year: 2026, title: 'Cine-Project Berlin', role: 'Lead', director: 'M. Müller', company: 'ZDF / UFA' },
+      { year: 2024, title: 'Indie Short Film', role: 'Lead', director: 'A. Garcia', company: 'Film Academy' },
+    ],
+    theater: [
+      {
+        year: 2025,
+        title: 'The London Stage Play',
+        role: 'Supporting',
+        director: 'S. Jenkins',
+        company: 'National Theatre',
+      },
+    ],
+  },
 }

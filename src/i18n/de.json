@@ -22,7 +22,8 @@
     { "label": "Wohnort", "value": "München" },
     { "label": "Verfügbar in", "value": "Europa" }
   ],
-  "creditsTable": { "year": "Jahr", "project": "Projekt", "role": "Rolle", "director": "Regie / Produktion" },
+  "creditsTable": { "year": "Jahr", "project": "Projekt", "role": "Rolle", "director": "Regie / Produktion", "school": "Schule / Institution" },
+  "vita": { "training": "Ausbildung", "film": "Film", "theater": "Theater" },
   "contact": { "email": "E-Mail", "agency": "Agentur" },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",

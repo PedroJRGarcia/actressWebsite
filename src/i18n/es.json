@@ -22,7 +22,8 @@
     { "label": "Residencia", "value": "Múnich" },
     { "label": "Disponible en", "value": "Europa" }
   ],
-  "creditsTable": { "year": "Año", "project": "Proyecto", "role": "Papel", "director": "Dirección / Producción" },
+  "creditsTable": { "year": "Año", "project": "Proyecto", "role": "Papel", "director": "Dirección / Producción", "school": "Escuela / Institución" },
+  "vita": { "training": "Formación", "film": "Cine", "theater": "Teatro" },
   "contact": { "email": "Email", "agency": "Agencia" },
   "footer": {
     "rights": "Todos los derechos reservados.",
