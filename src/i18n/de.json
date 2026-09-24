@@ -9,13 +9,18 @@
   },
   "resume": "Vita herunterladen",
   "role": "Schauspielerin",
-  "basedIn": "Wohnhaft in München · Verfügbar in Europa",
   "watchReel": "Showreel ansehen ▶",
+  "about": {
+    "title": "Über mich",
+    "text": "Ich bin Schauspielerin mit Sitz in München und spiele auf Deutsch, Englisch und Spanisch. Hier steht ein kurzer Text über meine Ausbildung, meine Erfahrung und was mich ausmacht."
+  },
   "stats": [
     { "label": "Spielalter", "value": "24 – 32" },
     { "label": "Größe", "value": "160 cm" },
     { "label": "Augen / Haare", "value": "Grün / Braun" },
-    { "label": "Sprachen", "value": "Deutsch, Englisch, Spanisch" }
+    { "label": "Sprachen", "value": "Deutsch, Englisch, Spanisch" },
+    { "label": "Wohnort", "value": "München" },
+    { "label": "Verfügbar in", "value": "Europa" }
   ],
   "creditsTable": { "year": "Jahr", "project": "Projekt", "role": "Rolle", "director": "Regie / Produktion" },
   "contact": { "email": "E-Mail", "agency": "Agentur" },
