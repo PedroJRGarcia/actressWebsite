@@ -5,6 +5,11 @@ import es from './es.json'
 
 export type Translation = typeof en
 
+// Props shared by every page section
+export interface SectionProps {
+  t: Translation
+}
+
 // Typed as Translation so TypeScript warns if es/de miss a key from en
 export const translations = { en, es, de } satisfies Record<string, Translation>
 

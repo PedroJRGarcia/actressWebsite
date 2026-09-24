@@ -1,12 +1,8 @@
 import React from 'react'
 import { profile } from '../data/profile'
-import type { Translation } from '../i18n'
+import type { SectionProps } from '../i18n'
 
-interface Props {
-  t: Translation
-}
-
-export const Voicereels: React.FC<Props> = ({ t }) => (
+export const Voicereels: React.FC<SectionProps> = ({ t }) => (
   <section id='voicereels'>
     <h2>{t.nav.voicereels}</h2>
     <div className='voicereels'>

@@ -1,12 +1,8 @@
 import React from 'react'
 import { profile } from '../data/profile'
-import type { Translation } from '../i18n'
+import type { SectionProps } from '../i18n'
 
-interface Props {
-  t: Translation
-}
-
-export const Home: React.FC<Props> = ({ t }) => (
+export const Home: React.FC<SectionProps> = ({ t }) => (
   <section id='home' className='home'>
     <div className='prints'>
       {profile.homePhotos.map((photo, index) => (
