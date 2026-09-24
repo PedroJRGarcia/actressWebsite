@@ -212,30 +212,90 @@ main section {
 
 .home {
   display: grid;
-  grid-template-columns: minmax(0, 2fr) 3fr;
+  grid-template-columns: 3fr 2fr;
   align-items: center;
-  gap: 3rem;
+  gap: 3rem 2.5rem;
 }
 
-.home-headshot {
+/* Start page photos: 3 developed prints with different shapes, scattered on a square canvas */
+.prints {
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.print {
+  position: absolute;
+  padding: 2% 2% 7%; /* thicker bottom border, like a developed photo */
+  background: #f4f1ea;
+  box-shadow: 0 12px 30px rgb(0 0 0 / 0.5);
+  transition:
+    rotate 0.3s,
+    scale 0.3s;
+}
+
+.print img {
   width: 100%;
-  aspect-ratio: 2 / 3;
   object-fit: cover;
-  border-radius: var(--radius);
+  object-position: center 25%; /* keeps faces in frame */
+}
+
+.print:hover {
+  z-index: 2;
+  rotate: 0deg;
+  scale: 1.04;
+}
+
+.print:nth-child(1) {
+  top: 6%;
+  left: 0;
+  width: 48%;
+  rotate: -4deg;
+}
+
+.print:nth-child(1) img {
+  aspect-ratio: 3 / 4;
+}
+
+.print:nth-child(2) {
+  top: 0;
+  right: 0;
+  width: 44%;
+  rotate: 3deg;
+}
+
+.print:nth-child(2) img {
+  aspect-ratio: 1;
+}
+
+.print:nth-child(3) {
+  right: 4%;
+  bottom: 0;
+  z-index: 1;
+  width: 54%;
+  rotate: -2deg;
+}
+
+.print:nth-child(3) img {
+  aspect-ratio: 4 / 3;
 }
 
 .home-role {
-  margin: 0.25rem 0 0.5rem;
+  margin: 0.5rem 0;
   font-size: 1.2rem;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
 
+.home-info .button {
+  margin-top: 2rem;
+}
+
+/* Physical details and languages: one row under the photos */
 .stats {
+  grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  margin: 2rem 0;
   padding: 1.5rem;
   border-radius: var(--radius);
   background: var(--surface);
@@ -466,9 +526,12 @@ th {
     grid-template-columns: 1fr;
   }
 
-  .home-headshot {
-    max-width: 220px;
-    margin: 0 auto;
+  .home-info {
+    text-align: center;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   main section {

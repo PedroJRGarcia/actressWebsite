@@ -1,7 +1,7 @@
 // Language-independent content. Edit this file to update the website.
 // Translated texts live in src/i18n.
 import headshot from '../assets/headshot.webp'
-import headshot2 from '../assets/headshot.webp'
+import headshot2 from '../assets/headshot2.webp'
 
 // Files placed in /public are served from the site root (BASE_URL handles GitHub Pages sub-paths)
 const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
@@ -28,8 +28,8 @@ export const profile = {
   creator: 'PedroG',
   email: 'elina@example.com',
   agency: { name: 'Agency Name', url: 'https://example.com' },
-  headshot: headshot,
-  headshot2: headshot2,
+  // Start page: 3 photos shown as developed prints (1 portrait, 2 square, 3 landscape)
+  homePhotos: [headshot, headshot2, publicFile('photos/1.webp')],
   resume: publicFile('resume.pdf'),
   links: [
     { label: 'IMDb', url: 'https://www.imdb.com' },
