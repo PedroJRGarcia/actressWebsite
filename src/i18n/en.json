@@ -9,13 +9,18 @@
   },
   "resume": "Download Resume",
   "role": "Actress",
-  "basedIn": "Based in Munich · Available in Europe",
   "watchReel": "Watch Showreel ▶",
+  "about": {
+    "title": "About me",
+    "text": "I am an actress based in Munich, working in German, English and Spanish. This is a short text about my training, my experience and what makes me unique."
+  },
   "stats": [
     { "label": "Playing age", "value": "24 – 32" },
     { "label": "Height", "value": "160 cm" },
     { "label": "Eyes / Hair", "value": "Green / Brown" },
-    { "label": "Languages", "value": "German, English, Spanish" }
+    { "label": "Languages", "value": "German, English, Spanish" },
+    { "label": "Based in", "value": "Munich" },
+    { "label": "Available in", "value": "Europe" }
   ],
   "creditsTable": { "year": "Year", "project": "Project", "role": "Role", "director": "Director / Production" },
   "contact": { "email": "Email", "agency": "Agency" },

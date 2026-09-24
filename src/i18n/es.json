@@ -9,13 +9,18 @@
   },
   "resume": "Descargar CV",
   "role": "Actriz",
-  "basedIn": "Residente en Munich · Disponible en Europa",
   "watchReel": "Ver videobook ▶",
+  "about": {
+    "title": "Sobre mí",
+    "text": "Soy actriz, vivo en Múnich y trabajo en alemán, inglés y español. Aquí va un breve texto sobre mi formación, mi experiencia y lo que me hace única."
+  },
   "stats": [
     { "label": "Edad escénica", "value": "24 – 32" },
     { "label": "Altura", "value": "160 cm" },
     { "label": "Ojos / Pelo", "value": "Verdes / Castaño" },
-    { "label": "Idiomas", "value": "Alemán, inglés, español" }
+    { "label": "Idiomas", "value": "Alemán, inglés, español" },
+    { "label": "Residencia", "value": "Múnich" },
+    { "label": "Disponible en", "value": "Europa" }
   ],
   "creditsTable": { "year": "Año", "project": "Proyecto", "role": "Papel", "director": "Dirección / Producción" },
   "contact": { "email": "Email", "agency": "Agencia" },
