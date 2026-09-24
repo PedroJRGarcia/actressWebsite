@@ -13,9 +13,9 @@ const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
 type Showreel = { title: string } & ({ vimeoId: string } | { filmmakersUrl: string } | { src: string; poster?: string })
 
 const showreels: Showreel[] = [
-  { title: 'Video1', src: publicFile('videos/mitbewohner.mp4'), poster: publicFile('videos/mitbewohner.jpg') },
-  { title: 'Video2', src: publicFile('videos/geschwister.mp4'), poster: publicFile('videos/geschwister.jpg') },
-  { title: 'Video3', src: publicFile('videos/vergewaltigung.mp4'), poster: publicFile('videos/vergewaltigung.jpg') },
+  { title: 'Mitbewohner', src: publicFile('videos/mitbewohner.mp4'), poster: publicFile('videos/mitbewohner.jpg') },
+  { title: 'Geschwister', src: publicFile('videos/geschwister.mp4'), poster: publicFile('videos/geschwister.jpg') },
+  { title: 'Vergewaltigung', src: publicFile('videos/vergewaltigung.mp4'), poster: publicFile('videos/vergewaltigung.jpg') },
   { title: 'Showreel 2026', vimeoId: '1084537' },
   // Filmmakers: paste the real address from the embed code, then uncomment
   // { title: 'Showreel Filmmakers', filmmakersUrl: 'https://www.filmmakers.eu/…/iframe' },
