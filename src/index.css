@@ -480,6 +480,49 @@ main .hero {
   overflow-x: auto;
 }
 
+/* VITA: one dropdown per group (training, film, theater) */
+.vita-group {
+  border-bottom: 1px solid var(--border);
+}
+
+.vita-group:first-of-type {
+  border-top: 1px solid var(--border);
+}
+
+.vita-group summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.vita-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.vita-group summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--muted);
+  transition: rotate 0.2s;
+}
+
+.vita-group[open] summary::after {
+  rotate: 45deg;
+}
+
+.vita-group summary:hover {
+  color: var(--accent);
+}
+
+.vita-group .table-wrapper {
+  padding-bottom: 1.5rem;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

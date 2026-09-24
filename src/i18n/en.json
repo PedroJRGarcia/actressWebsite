@@ -22,7 +22,8 @@
     { "label": "Based in", "value": "Munich" },
     { "label": "Available in", "value": "Europe" }
   ],
-  "creditsTable": { "year": "Year", "project": "Project", "role": "Role", "director": "Director / Production" },
+  "creditsTable": { "year": "Year", "project": "Project", "role": "Role", "director": "Director / Production", "school": "School / Institution" },
+  "vita": { "training": "Training", "film": "Film", "theater": "Theatre" },
   "contact": { "email": "Email", "agency": "Agency" },
   "footer": {
     "rights": "All Rights Reserved.",
