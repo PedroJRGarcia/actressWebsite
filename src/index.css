@@ -246,18 +246,6 @@ main .hero {
   object-position: center top; /* never cuts the head */
 }
 
-/* Wide screens: the whole photo without zoom, sides filled with a blurred copy */
-@media (orientation: landscape) {
-  .hero .hero-photo {
-    object-fit: contain;
-  }
-}
-
-.hero-blur {
-  filter: blur(30px) brightness(0.5);
-  scale: 1.1;
-}
-
 .hero-content {
   position: absolute;
   inset: 0;

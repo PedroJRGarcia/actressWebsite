@@ -6,8 +6,7 @@ export const Home: React.FC<SectionProps> = ({ t }) => (
   <>
     {/* Arrival: one big photo with the name and the showreel button */}
     <section id='home' className='hero'>
-      <img className='hero-blur' src={profile.heroPhoto} alt='' />
-      <img className='hero-photo' src={profile.heroPhoto} alt={profile.name} />
+      <img src={profile.heroPhoto} alt={profile.name} />
       <div className='hero-content'>
         <h1>{profile.name}</h1>
         <p className='hero-role'>{t.role}</p>
