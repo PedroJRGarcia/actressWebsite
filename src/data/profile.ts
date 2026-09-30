@@ -4,7 +4,7 @@ import headshot from '../assets/headshot.webp'
 export const profile = {
   name: 'Elina Fernandez',
   creator: 'PedroG',
-  email: 'elina@example.com',
+  email: 'elinafernandez.losproductores@gmail.com',
   agency: { name: 'Agency Name', url: 'https://example.com' },
   heroPhoto: headshot, // big photo on the start page (src/assets/headshot.webp)
   resume: 'resume.pdf', // in public/
