@@ -132,7 +132,7 @@ export const profile = {
   events: [
     // Placeholder: replace with the real events
     {
-      date: '2026-10-08 / 19Uhr',
+      date: '2026-10-08',
       title: 'Premiere: Eine Odyssee oder Backen ohne Mehl',
       place: 'Ithaka, München',
       url: 'https://dasvinzenz.de/reservierungen/',
