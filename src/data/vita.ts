@@ -53,7 +53,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       role: 'Tine',
       director: 'Oliver Mohr, Julian Schwandner, Alexander Flatau, Wouter Wirth, Katharina Rabl',
       place: 'Werkmünchen',
-      image: { file: 'katastrophe.webp', copyright: 'Oliver Mohr' },
+      image: { file: 'katastrophe.webp', copyright: 'Oliver Mohr, Julian Schwandner, Alexander Flatau, Wouter Wirth, Katharina Rabl' },
     },
     {
       year: 2012,
