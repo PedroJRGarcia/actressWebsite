@@ -1,18 +1,24 @@
-// Translated texts. To add a language: create its JSON file and register it here.
-import de from './de.json'
-import en from './en.json'
-import es from './es.json'
+// Languages of the site. The texts themselves are in texts.ts and legal.ts.
 
-export type Translation = typeof en
+// Order of the buttons in the language switcher, and the language the site opens in
+export const languages = ['en', 'es', 'de'] as const
+export type Lang = (typeof languages)[number]
+export const defaultLang: Lang = 'de'
 
-// Props shared by every page section
-export interface SectionProps {
-  t: Translation
+// A text is either the same in every language ('Showreels')
+// or has one version per language ({ de: 'Kontakt', en: 'Contact', es: 'Contacto' })
+export type Text = string | Record<Lang, string>
+
+// t(text) gives the text in the chosen language: t({ de: 'Kontakt', en: 'Contact', … }) → 'Kontakt'
+export type T = (text: Text) => string
+export function makeT(lang: Lang): T {
+  return text => {
+    if (typeof text === 'string') return text // same in every language
+    return text[lang] // the version for the chosen language
+  }
 }
 
-// Typed as Translation so TypeScript warns if es/de miss a key from en
-export const translations = { en, es, de } satisfies Record<string, Translation>
-
-export type Lang = keyof typeof translations
-export const languages = Object.keys(translations) as Lang[]
-export const defaultLang: Lang = 'de'
+// Every section receives t
+export interface SectionProps {
+  t: T
+}
