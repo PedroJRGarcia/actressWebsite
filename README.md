@@ -1,61 +1,68 @@
-# Personal Website (Actors)
-1. Easy and less files and folders as possible
-2. Easy to read and to mantain
-3. One-glance Portfolio design website for casting directors with zero patience.
-4. Readable in less than 30 seconds.
+# Elina Fernandez – Actress website
 
-# Tech Stack
-1. Build it with: React + TypeScript + Vite
-2. Deployment with Github Pages: `npm run deploy` (publishes the `dist` build to the `gh-pages` branch)
-3. Responsive
-4. Good IT practices
-5. Simple
+One-page portfolio for casting directors: readable in under 30 seconds, in German, English and Spanish.
 
-# Idea
-my-actor-portfolio/
-├── public/
-│   └── resume.pdf
-├── src/
-│   ├── assets/
-│   │   ├── headshot-main.webp
-│   │   ├── headshot-2.webp
-│   │   └── background.jpg
-│   ├── i18n/
-│   │   ├── en.json
-│   │   ├── es.json
-│   │   └── de.json
-│   ├── components/         <-- All page components go here
-│   │   ├── Home.tsx            
-│   │   ├── Showreels.tsx       
-│   │   ├── Gallery.tsx         
-│   │   ├── Voicereels.tsx      
-│   │   ├── Credits.tsx         
-│   │   └── Contact.tsx         
-│   ├── App.tsx             <-- Unified coordinator & header layout
-│   ├── index.css
-│   └── main.tsx
-├── package.json
-├── tsconfig.json
-└── vite.config.ts
+**Goals:** few files, easy to read and maintain, responsive, good IT practices, simple.
+**Stack:** React + TypeScript + Vite, hosted on GitHub Pages.
 
-# Content
-0. Structure:
-  * Header (The Navigation Bar). 
-      This bar is fixed/sticky at the very top of the screen on every single page. 
-      [ Flags/Language Selector: 🌐 EN | ES | DE ]
-  * Top-Left (Clickable Link to Home): [ YOUR FIRST & LAST NAME ]
-  * Top-Right Menu Links (In order):
-    + Home
-    + Showreels (Video embed)
-    + Gallery (Fotos load)
-    + Voicereels (Audio embed)
-    + Acting Credits
-    + Contact
-    + Download Resume (Styled as a distinct button, not just text)
-  * Bottom:
-    ---------------------------------------------------------------------------
-    © 2026 [Your Professional Name]. All Rights Reserved.
-    Website created by [Creator's Name]
-    
-    Impressum  |  Privacy Policy (Datenschutzerklärung)
-    ---------------------------------------------------------------------------
+## Commands
+
+| Command          | What it does                                          |
+| ---------------- | ----------------------------------------------------- |
+| `npm install`    | Once, after downloading the project                   |
+| `npm run dev`    | Local preview at http://localhost:5173 (live reload)  |
+| `npm run deploy` | Checks, builds and publishes the site to GitHub Pages |
+
+## How to update the content
+
+Everything you normally change is in **`src/data/`** (content) and **`src/i18n/`** (translations).
+Each file starts with a comment explaining how to edit it. You never need to touch `src/components/`.
+
+| I want to change…                         | File                    |
+| ----------------------------------------- | ----------------------- |
+| Name, email, agency, links, CV file       | `src/data/profile.ts`   |
+| "Über mich" details and skills (stars)    | `src/data/about.ts`     |
+| Upcoming events                           | `src/data/events.ts`    |
+| Videos                                    | `src/data/showreels.ts` |
+| Photos                                    | `src/data/photos.ts`    |
+| Audios                                    | `src/data/audios.ts`    |
+| Vita: training, films, plays              | `src/data/vita.ts`      |
+| Menu, buttons, headings, "Über mich" text | `src/i18n/texts.ts`     |
+| Impressum, privacy policy                 | `src/i18n/legal.ts`     |
+| Colours, fonts                            | top of `src/index.css`  |
+
+**Files** (photos, videos, CV) go in `public/` and are written in the data files by name only:
+`public/photos/1.webp` → `file: '1.webp'`.
+
+**Translations:** a text that changes with the language is written with all three side by side,
+`{ de: 'Kontakt', en: 'Contact', es: 'Contacto' }`. A text that is the same in every language is written once: `'Showreels'`.
+If a language is missing, the build stops with an error, so the site is never published half-translated.
+
+**Copyright:** photos, videos and audios show "© Elina Fernandez" unless you add `copyright: 'Other Name'`.
+
+## Structure
+
+```
+public/                 files served as they are: resume.pdf, photos/, videos/
+src/
+├── data/               CONTENT – one file per section, plain lists
+│   └── types.ts        the fields each list accepts (reference)
+├── i18n/               TRANSLATIONS
+│   ├── texts.ts        interface texts, DE / EN / ES side by side
+│   ├── legal.ts        Impressum and privacy policy
+│   └── index.ts        the languages, and t(): gives a text in the chosen language
+├── components/         one file per part of the page, in page order:
+│                       Header, Hero, About (+ Events), Showreels, Gallery, Audio, Vita, Contact, Footer
+│                       ui.tsx: small shared pieces (section title, outside link, ©, language tag)
+├── content.ts          prepares the data for the page: file addresses, sorting, hiding past events
+├── App.tsx             puts the sections in order
+├── index.css           all styles, in page order, with a table of contents at the top
+└── main.tsx            starts the app
+```
+
+Same name everywhere: the Vita section is `data/vita.ts` → `components/Vita.tsx` → `#vita` → `.vita-…` styles.
+
+## Privacy
+
+No cookies, no tracking, fonts served from the site itself. Filmmakers videos load only after a click,
+audios only when played (see `src/i18n/legal.ts`).
