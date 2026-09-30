@@ -135,6 +135,11 @@ h2 {
   font-size: 2rem;
   line-height: 1;
   text-decoration: none;
+  transition: color 0.2s;
+}
+
+.logo:hover {
+  color: var(--accent);
 }
 
 .nav {
