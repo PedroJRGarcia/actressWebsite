@@ -79,6 +79,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'supporting',
       director: 'Eos Schopohl',
       place: 'Theater dasvinzenz',
+      image: { file: 'die-zweite-natur.webp', copyright: 'dasvinzenz' },
     },
     {
       year: 2026,
@@ -88,6 +89,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'lead',
       director: 'Paulina Platzer / Eos Schopohl',
       place: 'Theater dasvinzenz',
+      image: { file: 'eine-odyssee-oder-backen-ohne-mehl.webp', copyright: 'Holger Borggrefe' },
     },
     {
       year: 2025,
@@ -96,6 +98,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'lead',
       director: 'Eos Schopohl',
       place: 'Theater dasvinzenz',
+      image: { file: 'ich-will-keinen-trost-von-niemandem.webp', copyright: 'dasvinzenz' },
     },
     {
       year: 2025,
@@ -104,6 +107,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'lead',
       director: 'Paulina Platzer / Eos Schopohl',
       place: 'Theater dasvinzenz',
+      image: { file: 'in-between.webp', copyright: 'dasvinzenz' },
     },
     {
       year: 2022,
@@ -117,6 +121,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'supporting',
       director: 'Eos Schopohl, Robert Spitz',
       place: 'Theater dasvinzenz',
+      image: { file: 'ppp-die-performance.webp', copyright: 'Elina Fernandez' },
     },
     {
       year: 2021,
@@ -130,6 +135,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'episodeLead',
       director: 'Eos Schopohl, Robert Spitz',
       place: 'Theater dasvinzenz',
+      image: { file: 'die-schlacht.webp', copyright: 'Nina Strukamp' },
     },
     {
       year: 2017,
@@ -139,6 +145,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'lead',
       director: 'Helmer Erazo España',
       place: 'Barro Colorado Teatro',
+      image: { file: 'vor-dem-fruehstueck.webp', copyright: 'Helmer Erazo España' },
     },
     {
       year: 2015,
@@ -148,6 +155,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'episodeLead',
       director: 'Juan Alonso',
       place: 'L.P Los Productores',
+      image: { file: 'la-coleccion.webp', copyright: 'L.P Los Productores' },
     },
     {
       year: 2014,
@@ -161,6 +169,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'lead',
       director: 'Rodrigo Rodríguez',
       place: 'Ditirambo Teatro',
+      image: { file: 'persona-a-persona.webp', copyright: 'John Camacho' },
     },
     {
       year: 2012,
@@ -173,6 +182,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       role: 'Yoshitsune',
       part: 'lead',
       place: 'Teatro Libre – Universidad Central',
+      image: { file: 'yoshitsune.webp', copyright: 'Teatro Libre' },
     },
     {
       year: 2012,
@@ -182,6 +192,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'supporting',
       director: 'Nelson Celis',
       place: 'Teatro Libre – Universidad Central',
+      image: { file: 'small-craft-warnings.webp', copyright: 'Teatro Libre' },
     },
     {
       year: '2010 – 2011',
@@ -195,6 +206,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       part: 'episodeLead',
       director: 'Pedro Salazar',
       place: 'La Compañía Estable',
+      image: { file: 'the-pillowman.webp', copyright: 'La Compañía Estable' },
     },
   ],
 }
