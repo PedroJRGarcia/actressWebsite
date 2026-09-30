@@ -5,9 +5,10 @@
 import type { Showreel } from './types'
 
 export const showreels: Showreel[] = [
-  { title: 'Mitbewohner', lang: 'de', video: 'mitbewohner.mp4', poster: 'mitbewohner.webp' },
-  { title: 'Geschwister', lang: 'de', video: 'geschwister.mp4', poster: 'geschwister.webp' },
-  { title: 'Vergewaltigung', lang: 'de', video: 'vergewaltigung.mp4', poster: 'vergewaltigung.webp' },
+  //descomentar para self-host videos
+  // { title: 'Mitbewohner', lang: 'de', video: 'mitbewohner.mp4', poster: 'mitbewohner.webp' },
+  // { title: 'Geschwister', lang: 'de', video: 'geschwister.mp4', poster: 'geschwister.webp' },
+  // { title: 'Vergewaltigung', lang: 'de', video: 'vergewaltigung.mp4', poster: 'vergewaltigung.webp' },
   {
     title: 'Geschwister',
     lang: 'de',
