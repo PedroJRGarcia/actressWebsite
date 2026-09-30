@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { filmmakersVideo, publicFile } from '../content'
 import { profile } from '../data/profile'
 import { showreels } from '../data/showreels'
+import type { Showreel } from '../data/types'
 import type { SectionProps } from '../i18n'
 import { texts } from '../i18n/texts'
 import { Copyright, ExternalLink, LangTag, Section } from './ui'
@@ -11,23 +12,21 @@ export function Showreels({ t }: SectionProps) {
   return (
     <Section id='showreels' title={t(texts.nav.showreels)}>
       <div className='reels'>
-        {showreels.map((reel, i) => (
-          <figure key={i}>
-            {'video' in reel ? (
+        {showreels.map((reel, i) =>
+          'video' in reel ? (
+            <figure key={i}>
               <OwnVideo file={reel.video} poster={reel.poster} copyright={reel.copyright} />
-            ) : (
-              <FilmmakersPlayer t={t} groups={reel.filmmakers} title={reel.title} />
-            )}
-            <figcaption>
-              <span className='reel-title'>
-                {reel.title}
-                <LangTag lang={reel.lang} />
-              </span>
-              {/* Filmmakers draws its own logo on top of the video, so its © goes below instead */}
-              {'filmmakers' in reel && <Copyright of={reel} below />}
-            </figcaption>
-          </figure>
-        ))}
+              <figcaption>
+                <span className='reel-title'>
+                  {reel.title}
+                  <LangTag lang={reel.lang} />
+                </span>
+              </figcaption>
+            </figure>
+          ) : (
+            <FilmmakersReel key={i} t={t} reel={reel} />
+          ),
+        )}
       </div>
     </Section>
   )
@@ -50,23 +49,28 @@ function OwnVideo({ file, poster, copyright }: { file: string; poster?: string; 
 
 const filmmakersProfile = profile.links.find(link => link.label === 'Filmmakers')?.url ?? ''
 
-type FilmmakersProps = SectionProps & { groups: { label: string; id: number; poster?: string }[]; title: string }
+type FilmmakersReel = Extract<Showreel, { filmmakers: unknown }>
 
-// Filmmakers player with our own buttons to switch group (2023, About me…).
+// Filmmakers player with our own buttons to switch group (2023, About me…), each with its language.
 // Its own top bar is cropped off (see .filmmakers-crop) and a small "Filmmakers" link takes its place.
 // Privacy: nothing is loaded from Filmmakers until the visitor clicks ▶.
-function FilmmakersPlayer({ t, groups, title }: FilmmakersProps) {
-  const [active, setActive] = useState(groups[0].id)
+function FilmmakersReel({ t, reel }: SectionProps & { reel: FilmmakersReel }) {
+  const groups = reel.filmmakers
+  const [active, setActive] = useState(groups[0])
   const [loaded, setLoaded] = useState(false)
-  const poster = groups.find(group => group.id === active)?.poster
+  // Language(s) of a group: its own if given, otherwise the reel's
+  const langsOf = (group: FilmmakersReel['filmmakers'][number]) => [group.lang ?? reel.lang].flat()
 
   return (
-    <>
+    <figure>
       {groups.length > 1 && (
         <div className='reel-tabs'>
           {groups.map(group => (
-            <button key={group.id} className={group.id === active ? 'active' : ''} onClick={() => setActive(group.id)}>
+            <button key={group.id} className={group === active ? 'active' : ''} onClick={() => setActive(group)}>
               {group.label}
+              {langsOf(group).map(lang => (
+                <LangTag key={lang} lang={lang} />
+              ))}
             </button>
           ))}
         </div>
@@ -77,8 +81,8 @@ function FilmmakersPlayer({ t, groups, title }: FilmmakersProps) {
           {loaded ? (
             <iframe
               className='filmmakers'
-              src={filmmakersVideo(active)}
-              title={title}
+              src={filmmakersVideo(active.id)}
+              title={reel.title}
               allow='autoplay; fullscreen; picture-in-picture'
               allowFullScreen
             />
@@ -88,7 +92,7 @@ function FilmmakersPlayer({ t, groups, title }: FilmmakersProps) {
               className='click-to-load'
               onClick={() => setLoaded(true)}
               aria-label={t(texts.filmmakersConsent.button)}>
-              {poster && <img src={publicFile(`videos/${poster}`)} alt='' />}
+              {active.poster && <img src={publicFile(`videos/${active.poster}`)} alt='' />}
               <span className='play-icon'>▶</span>
               <small>{t(texts.filmmakersConsent.text)}</small>
             </button>
@@ -98,6 +102,17 @@ function FilmmakersPlayer({ t, groups, title }: FilmmakersProps) {
           Filmmakers ↗
         </ExternalLink>
       </div>
-    </>
+
+      <figcaption>
+        <span className='reel-title'>
+          {reel.title}
+          {langsOf(active).map(lang => (
+            <LangTag key={lang} lang={lang} />
+          ))}
+        </span>
+        {/* Filmmakers draws its own logo on top of the video, so its © goes below instead */}
+        <Copyright of={reel} below />
+      </figcaption>
+    </figure>
   )
 }

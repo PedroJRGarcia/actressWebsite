@@ -15,7 +15,8 @@ export type Showreel = {
   | { video: string; poster?: string } // file in public/videos/
   // One button per group. id: from the Filmmakers embed code.
   // poster: a still from the video, saved in public/videos/ (shown before loading; must not come from Filmmakers)
-  | { filmmakers: { label: string; id: number; poster?: string }[] }
+  // lang: only when that group is in another language than the reel; a list if it holds clips in several ('de', 'es')
+  | { filmmakers: { label: string; id: number; poster?: string; lang?: SpokenLang | SpokenLang[] }[] }
 )
 
 export type Photo = { file: string; copyright?: string } // file in public/photos/

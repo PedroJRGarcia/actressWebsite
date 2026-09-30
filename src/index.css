@@ -700,6 +700,9 @@ main .hero {
 }
 
 .reel-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.4rem 0.9rem;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -718,6 +721,11 @@ main .hero {
   border-color: #fff;
   background: #fff;
   color: #000;
+}
+
+/* Language tag on the white (selected) tab: darker, so it stays readable */
+.reel-tabs button.active .lang-tag {
+  color: color-mix(in srgb, var(--c) 55%, #000);
 }
 
 .reel-tabs button:hover {
