@@ -13,7 +13,8 @@ export const copyrightOf = (item: { copyright?: string }) => item.copyright ?? p
 
 // Filmmakers video player. background_color=121212 = the site's dark background (the player then uses white text);
 // playlist=h: the clips of that group are shown as thumbnails to switch between.
-// autoplay: the visitor already clicked ▶ to load it, so it starts playing right away
+// autoplay=true asks the player to start right away (the visitor already clicked ▶), but Filmmakers
+// currently ignores it, so the visitor presses play once more inside the player
 export const filmmakersVideo = (id: number) =>
   `https://www.filmmakers.eu/es/actors/elina-fernandez/video/${id}?autoplay=true&background_color=121212&iframe=v2&playlist=h`
 
