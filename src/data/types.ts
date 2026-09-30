@@ -13,7 +13,9 @@ export type Showreel = {
   copyright?: string
 } & (
   | { video: string; poster?: string } // file in public/videos/
-  | { filmmakers: { label: string; id: number }[] } // one button per group; id from the Filmmakers embed code
+  // One button per group. id: from the Filmmakers embed code.
+  // poster: a still from the video, saved in public/videos/ (shown before loading; must not come from Filmmakers)
+  | { filmmakers: { label: string; id: number; poster?: string }[] }
 )
 
 export type Photo = { file: string; copyright?: string } // file in public/photos/

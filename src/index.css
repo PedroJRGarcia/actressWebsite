@@ -632,21 +632,63 @@ main .hero {
 
 /* Click to load: shown in place of the Filmmakers player until the visitor agrees */
 .click-to-load {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
   height: 100%;
-  padding: 1.5rem;
-  text-align: center;
+  padding: 0;
+  border: none;
   background: var(--surface);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
 }
 
-.click-to-load p {
-  max-width: 28rem;
-  font-size: 0.85rem;
-  color: var(--muted);
+/* Still of the video, filling the frame */
+.click-to-load img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+/* Round ▶ in the centre, turquoise on hover */
+.play-icon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  padding-left: 0.3rem; /* the triangle looks centred */
+  border-radius: 50%;
+  background: rgb(0 0 0 / 0.55);
+  backdrop-filter: blur(4px);
+  font-size: 1.6rem;
+  transition: background 0.2s;
+}
+
+.click-to-load:hover img {
+  opacity: 1;
+}
+
+.click-to-load:hover .play-icon {
+  background: var(--accent);
+}
+
+/* Privacy note: small, at the bottom, over a soft shadow */
+.click-to-load small {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem 1rem 0.6rem;
+  background: linear-gradient(to top, rgb(0 0 0 / 0.75), transparent);
+  font-size: 0.7rem;
+  color: rgb(255 255 255 / 0.75);
 }
 
 /* Buttons to switch Filmmakers group: same look as the download button (white, turquoise on hover) */
