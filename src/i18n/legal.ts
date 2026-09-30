@@ -2,9 +2,9 @@
 // Web addresses (https://…) inside a text become links automatically.
 export const legal = {
   impressumText: {
-    de: 'Angaben gemäß § 5 DDG: Elina Fernandez, Sendlinger kirchplatz 3, 81371 München, Deutschland. E-Mail: elinafernandez.losproductores@gmail.com',
-    en: 'Information according to § 5 DDG: Elina Fernandez, Sendlinger kirchplatz 3, 81371 Munich, Germany. Email: elinafernandez.losproductores@gmail.com',
-    es: 'Información según § 5 DDG: Elina Fernandez, Sendlinger kirchplatz 3, 81371 Múnich, Alemania. Email: elinafernandez.losproductores@gmail.com',
+    de: 'Angaben gemäß § 5 DDG: Elina Fernandez, Sendlinger Kirchplatz 3, 81371 München, Deutschland. E-Mail: elinafernandez.losproductores@gmail.com',
+    en: 'Information according to § 5 DDG: Elina Fernandez, Sendlinger Kirchplatz 3, 81371 Munich, Germany. Email: elinafernandez.losproductores@gmail.com',
+    es: 'Información según § 5 DDG: Elina Fernandez, Sendlinger Kirchplatz 3, 81371 Múnich, Alemania. Email: elinafernandez.losproductores@gmail.com',
   },
   privacySections: [
     {
@@ -66,9 +66,9 @@ export const legal = {
     {
       title: { de: '7. Kontakt per E-Mail', en: '7. Contact by email', es: '7. Contacto por correo electrónico' },
       text: {
-        de: 'Wenn Sie mir eine E-Mail schreiben, verarbeite ich Ihre Angaben nur, um Ihre Anfrage zu beantworten (Art. 6 Abs. 1 lit. b DSGVO, wenn es um eine Zusammenarbeit geht, sonst Art. 6 Abs. 1 lit. f DSGVO). Die Daten werden gelöscht, sobald sie dafür nicht mehr benötigt werden und keine gesetzlichen Aufbewahrungspflichten bestehen.',
-        en: 'If you email me, I use your details only to answer your request (Art. 6(1)(b) GDPR where it concerns working together, otherwise Art. 6(1)(f) GDPR). The data is deleted once it is no longer needed for that purpose and no legal retention obligations apply.',
-        es: 'Si me escribes un correo, uso tus datos solo para responder a tu consulta (art. 6.1.b RGPD si se trata de una colaboración profesional; en otro caso, art. 6.1.f RGPD). Se borran cuando ya no son necesarios para ello y no existe obligación legal de conservarlos.',
+        de: 'Wenn Sie mir eine E-Mail schreiben, verarbeite ich Ihre Angaben nur, um Ihre Anfrage zu beantworten (Art. 6 Abs. 1 lit. b DSGVO, wenn es um eine Zusammenarbeit geht, sonst Art. 6 Abs. 1 lit. f DSGVO). Für E-Mails nutze ich Gmail, einen Dienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland; eine Übermittlung an Google LLC in den USA ist nicht ausgeschlossen (Google ist nach dem EU-US Data Privacy Framework zertifiziert). Die Daten werden gelöscht, sobald sie dafür nicht mehr benötigt werden und keine gesetzlichen Aufbewahrungspflichten bestehen.',
+        en: 'If you email me, I use your details only to answer your request (Art. 6(1)(b) GDPR where it concerns working together, otherwise Art. 6(1)(f) GDPR). I use Gmail for email, a service of Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland; a transfer to Google LLC in the USA cannot be ruled out (Google is certified under the EU-US Data Privacy Framework). The data is deleted once it is no longer needed for that purpose and no legal retention obligations apply.',
+        es: 'Si me escribes un correo, uso tus datos solo para responder a tu consulta (art. 6.1.b RGPD si se trata de una colaboración profesional; en otro caso, art. 6.1.f RGPD). Para el correo uso Gmail, un servicio de Google Ireland Limited, Gordon House, Barrow Street, Dublín 4, Irlanda; no se puede descartar una transferencia a Google LLC en EE. UU. (Google está certificada conforme al Marco de Privacidad de Datos UE-EE. UU.). Los datos se borran cuando ya no son necesarios para ello y no existe obligación legal de conservarlos.',
       },
     },
     {
