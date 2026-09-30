@@ -57,6 +57,13 @@
     "director": "Director / Production",
     "school": "School / Institution"
   },
+  "creditIcons": {
+    "director": "Director",
+    "production": "Production",
+    "studio": "Production company",
+    "theater": "Theatre",
+    "author": "Author"
+  },
   "vita": {
     "training": "Training",
     "film": "Film",
