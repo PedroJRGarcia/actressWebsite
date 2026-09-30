@@ -147,3 +147,7 @@ export const profile = {
     ],
   },
 }
+
+// Only events from today on, soonest first (used by the Events section and the menu)
+const today = new Date().toISOString().slice(0, 10)
+export const upcoming = profile.events.filter(event => event.date >= today).sort((a, b) => a.date.localeCompare(b.date))

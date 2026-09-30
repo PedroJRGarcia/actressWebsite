@@ -5,7 +5,7 @@ import { Gallery } from './components/Gallery'
 import { Home } from './components/Home'
 import { Showreels } from './components/Showreels'
 import { Voicereels } from './components/Voicereels'
-import { profile } from './data/profile'
+import { profile, upcoming } from './data/profile'
 import { defaultLang, languages, translations, type Lang } from './i18n'
 
 // Turns the web addresses inside a text into links
@@ -20,7 +20,16 @@ const withLinks = (text: string) =>
     ),
   )
 
-const sections = ['home', 'showreels', 'gallery', 'voicereels', 'credits', 'contact'] as const
+// "Events" only shows in the menu while there are upcoming dates
+const sections = [
+  'home',
+  ...(upcoming.length > 0 ? ['events' as const] : []),
+  'showreels',
+  'gallery',
+  'voicereels',
+  'credits',
+  'contact',
+] as const
 
 export const App: React.FC = () => {
   const [lang, setLang] = React.useState<Lang>(defaultLang)
