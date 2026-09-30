@@ -58,6 +58,19 @@ const showreels: Showreel[] = [
   // { title: 'Comedy', src: publicFile('videos/comedy.mp4'), poster: publicFile('videos/comedy.jpg'), copyright: COPYRIGHT },
 ]
 
+// One row of the Vita. Leave out "author", "director" or "production" when there is none.
+// company: production company for films, theatre for plays
+type Training = { year: number | string; title: string; school: string }
+type Credit = {
+  year: number | string
+  title: string
+  author?: string
+  role: string
+  director?: string
+  production?: string
+  company: string
+}
+
 export const profile = {
   name: 'Elina Fernandez',
   creator: 'PedroG',
@@ -119,32 +132,143 @@ export const profile = {
   events: [
     // Placeholder: replace with the real events
     {
-      date: '2026-10-17',
-      title: 'Premiere: Cine-Project Berlin',
-      place: 'Berlinale Palast, Berlin',
-      url: 'https://example.com',
+      date: '2026-10-08 / 19Uhr',
+      title: 'Premiere: Eine Odyssee oder Backen ohne Mehl',
+      place: 'Ithaka, München',
+      url: 'https://dasvinzenz.de/reservierungen/',
     },
-    { date: '2026-11-08', title: 'Theaterstück – Lesung', place: 'Kammerspiele, München' },
+    { date: '2026-11-08', title: 'Theaterstück – Lesung', place: 'dasvinzenz, München' },
   ] as { date: string; title: string; place: string; url?: string }[],
-  // "Vita" section: one dropdown per group, shown in this order: training, film, theater
+  // "Vita" section: one dropdown per group, shown in this order: training, film, theater.
+  // Newest first. "author" (optional) shows in small letters under the title.
   credits: {
-    // Dummy text: replace with the real training, films and plays
     training: [
-      { year: '2016 – 2019', title: 'Lorem ipsum dolor', school: 'Sit Amet Akademie' },
-      { year: 2020, title: 'Consectetur Workshop', school: 'Adipiscing Studio' },
-      { year: 2022, title: 'Elit sed do', school: 'Eiusmod Institut' },
-    ],
+      { year: 2023, title: 'Acting for Film Weiterbildung', school: 'Theater Werkmünchen' },
+      { year: 2021, title: 'Schauspiel und Vocal Coach Weiterbildung', school: 'Theater Werkmünchen' },
+      {
+        year: '2009 – 2013',
+        title: 'Schauspielstudium',
+        school: 'Universidad Central – Escuela Teatro Libre de Bogotá',
+      },
+    ] as Training[],
     film: [
-      { year: 2025, title: 'Tempor Incididunt', role: 'Lorem', director: 'A. Ipsum', company: 'Dolor Film' },
-      { year: 2024, title: 'Ut Labore', role: 'Ipsum', director: 'B. Magna', company: 'Aliqua Produktion' },
-      { year: 2023, title: 'Enim ad Minim', role: 'Dolor', director: 'C. Veniam', company: 'Quis Pictures' },
-      { year: 2021, title: 'Nostrud Exercitation', role: 'Sit', director: 'D. Ullamco', company: 'Laboris Film' },
-    ],
+      {
+        year: 2025,
+        title: 'Die Poesie des Scheiterns (Kinofilm)',
+        role: 'Assistenzärztin (NR)',
+        director: 'Holger Borggrefe',
+        production: 'Basti Schwarz',
+        company: 'Werkmünchen',
+      },
+      {
+        year: 2023,
+        title: 'Katastrophe (Kurzfilm)',
+        role: 'Tine',
+        director: 'Oliver Mohr, Julian Schwandner, Alexander Flatau',
+        company: 'Werkmünchen',
+      },
+      {
+        year: 2012,
+        title: 'Calma Chicha (Kurzfilm)',
+        author: 'nach Haruki Murakamis Roman „Die Chroniken des Aufziehvogels“',
+        role: 'Nebenrolle',
+        director: 'Alejandro Torrijos',
+        company: '¿Para qué? Producciones',
+      },
+    ] as Credit[],
     theater: [
-      { year: 2024, title: 'Duis Aute', role: 'Amet', director: 'E. Irure', company: 'Teatro Reprehenderit' },
-      { year: 2022, title: 'Voluptate Velit', role: 'Lorem', director: 'F. Esse', company: 'Cillum Bühne' },
-      { year: 2019, title: 'Fugiat Nulla', role: 'Ipsum', director: 'G. Pariatur', company: 'Excepteur Theater' },
-    ],
+      {
+        year: 2026,
+        title: 'Die zweite Natur (in Entwicklung)',
+        role: 'Nebenrolle',
+        director: 'Eos Schopohl',
+        company: 'Theater dasvinzenz',
+      },
+      {
+        year: 2026,
+        title: 'Eine Odyssee oder Backen ohne Mehl (in Entwicklung)',
+        role: 'Reiseleiterin (HR)',
+        director: 'Paulina Platzer / Eos Schopohl',
+        company: 'Theater dasvinzenz',
+      },
+      {
+        year: 2025,
+        title: 'Ich will keinen Trost von Niemandem – De algún tiempo a esta parte',
+        role: 'Emma (HR)',
+        director: 'Eos Schopohl',
+        company: 'Theater dasvinzenz',
+      },
+      {
+        year: 2025,
+        title: 'In Between | Në mes | dazwischen',
+        role: 'Reiseleiterin (HR)',
+        director: 'Paulina Platzer / Eos Schopohl',
+        company: 'Theater dasvinzenz',
+      },
+      {
+        year: 2022,
+        title: 'PPP die Performance',
+        author: 'Pier Paolo Pasolini',
+        role: 'Adler, Frau, der Heilige Franziskus (NR)',
+        director: 'Eos Schopohl, Robert Spitz',
+        company: 'Theater dasvinzenz',
+      },
+      {
+        year: 2021,
+        title: 'Die Schlacht',
+        author: 'Heiner Müller',
+        role: 'Die Frau, ein Soldat – mehrere Rollen (EHR)',
+        director: 'Eos Schopohl, Robert Spitz',
+        company: 'Theater dasvinzenz',
+      },
+      {
+        year: 2017,
+        title: 'Vor dem Frühstück',
+        author: "Eugene O'Neill",
+        role: 'Frau Rowland (HR)',
+        director: 'Helmer Erazo España',
+        company: 'Barro Colorado Teatro',
+      },
+      {
+        year: 2015,
+        title: 'La Colección',
+        author: 'Harold Pinter (Adaption)',
+        role: 'Valeria (EHR)',
+        director: 'Juan Alonso',
+        company: 'L.P Los Productores',
+      },
+      {
+        year: 2014,
+        title: 'Persona a persona',
+        author: 'Ingmar Bergman – Theateradaption des Films „Persona“',
+        role: 'Elisabet Vogler (HR)',
+        director: 'Rodrigo Rodríguez',
+        company: 'Ditirambo Teatro',
+      },
+      {
+        year: 2012,
+        title: 'Yoshitsune, der junge Samurai',
+        author: 'Kanze Nobumitsu',
+        role: 'Yoshitsune (HR)',
+        company: 'Teatro Libre – Universidad Central',
+      },
+      {
+        year: 2012,
+        title: 'Small Craft Warnings',
+        author: 'Tennessee Williams',
+        role: 'Violet (NR)',
+        director: 'Nelson Celis',
+        company: 'Teatro Libre – Universidad Central',
+      },
+      {
+        year: '2010 – 2011',
+        title: 'The Pillowman',
+        author: 'Martin McDonagh',
+        role: 'The Jesus Girl (EHR)',
+        director: 'Pedro Salazar',
+        company: 'La Compañía Estable',
+      },
+    ] as Credit[],
   },
 }
 

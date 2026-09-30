@@ -1,9 +1,23 @@
+import { BookOpen, Clapperboard, Drama, Film, Monitor, type LucideIcon } from 'lucide-react'
 import React from 'react'
 import { profile } from '../data/profile'
 import type { SectionProps } from '../i18n'
 
-// Film and theater share the same columns; training has its own
-const RolesTable: React.FC<SectionProps & { credits: typeof profile.credits.film }> = ({ t, credits }) => (
+// Small line icon + text. Hovering shows what it is (e.g. "Regie")
+const Labeled: React.FC<{ icon: LucideIcon; label: string; text: string }> = ({ icon: Icon, label, text }) => (
+  <span className='credit-item' title={label}>
+    <Icon aria-label={label} size={14} strokeWidth={1.75} />
+    {text}
+  </span>
+)
+
+// Film and theater share the same columns; training has its own.
+// Place icon: a screen for film companies, theatre masks for theatres
+const RolesTable: React.FC<SectionProps & { credits: typeof profile.credits.film; kind: 'film' | 'theater' }> = ({
+  t,
+  credits,
+  kind,
+}) => (
   <table>
     <thead>
       <tr>
@@ -17,10 +31,23 @@ const RolesTable: React.FC<SectionProps & { credits: typeof profile.credits.film
       {credits.map(credit => (
         <tr key={`${credit.year}-${credit.title}`}>
           <td>{credit.year}</td>
-          <td className='strong'>{credit.title}</td>
+          <td>
+            <span className='strong'>{credit.title}</span>
+            {credit.author && (
+              <span className='credit-author'>
+                <Labeled icon={BookOpen} label={t.creditIcons.author} text={credit.author} />
+              </span>
+            )}
+          </td>
           <td>{credit.role}</td>
-          <td className='muted'>
-            {credit.director} · {credit.company}
+          <td className='muted credit-people'>
+            {credit.director && <Labeled icon={Clapperboard} label={t.creditIcons.director} text={credit.director} />}
+            {credit.production && <Labeled icon={Film} label={t.creditIcons.production} text={credit.production} />}
+            {kind === 'film' ? (
+              <Labeled icon={Monitor} label={t.creditIcons.studio} text={credit.company} />
+            ) : (
+              <Labeled icon={Drama} label={t.creditIcons.theater} text={credit.company} />
+            )}
           </td>
         </tr>
       ))}
@@ -60,14 +87,14 @@ export const Credits: React.FC<SectionProps> = ({ t }) => (
     <details className='vita-group'>
       <summary>{t.vita.film}</summary>
       <div className='table-wrapper'>
-        <RolesTable t={t} credits={profile.credits.film} />
+        <RolesTable t={t} credits={profile.credits.film} kind='film' />
       </div>
     </details>
 
     <details className='vita-group'>
       <summary>{t.vita.theater}</summary>
       <div className='table-wrapper'>
-        <RolesTable t={t} credits={profile.credits.theater} />
+        <RolesTable t={t} credits={profile.credits.theater} kind='theater' />
       </div>
     </details>
   </section>
