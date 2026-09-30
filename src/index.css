@@ -148,10 +148,12 @@ h2 {
   white-space: nowrap;
   color: var(--muted);
   text-decoration: none;
+  transition: color 0.2s;
 }
 
-.nav a:not(.button):hover {
-  color: var(--text);
+/* Turquoise on hover, also over the start photo */
+.header .nav a:not(.button):hover {
+  color: var(--accent);
 }
 
 .lang {
@@ -166,6 +168,12 @@ h2 {
   background: none;
   color: var(--muted);
   cursor: pointer;
+  transition: color 0.2s;
+}
+
+/* Same turquoise as the menu links on hover */
+.header .lang button:hover {
+  color: var(--accent);
 }
 
 .lang button + button::before {

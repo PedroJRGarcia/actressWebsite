@@ -1,15 +1,11 @@
 import React from 'react'
-import { profile } from '../data/profile'
+import { upcoming } from '../data/profile'
 import type { SectionProps } from '../i18n'
-
-// Only events from today on, soonest first
-const today = new Date().toISOString().slice(0, 10)
-const upcoming = profile.events.filter(event => event.date >= today).sort((a, b) => a.date.localeCompare(b.date))
 
 export const Events: React.FC<SectionProps> = ({ t }) => {
   if (upcoming.length === 0) return null
   return (
-    <section className='events'>
+    <section id='events' className='events'>
       <h2>{t.events.title}</h2>
       <ul>
         {upcoming.map(event => {
