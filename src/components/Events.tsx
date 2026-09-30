@@ -5,7 +5,7 @@ import type { SectionProps } from '../i18n'
 export const Events: React.FC<SectionProps> = ({ t }) => {
   if (upcoming.length === 0) return null
   return (
-    <section id='events' className='events'>
+    <section className='events'>
       <h2>{t.events.title}</h2>
       <ul>
         {upcoming.map(event => {
