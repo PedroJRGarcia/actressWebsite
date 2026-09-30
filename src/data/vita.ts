@@ -45,6 +45,7 @@ export const vita: Record<'training' | 'film' | 'theater', VitaEntry[]> = {
       director: 'Holger Borggrefe',
       production: 'Basti Schwarz',
       place: 'Werkmünchen',
+      image: { file: 'die-poesie-des-scheiterns.webp', copyright: 'Holger Borggrefe' },
     },
     {
       year: 2023,
