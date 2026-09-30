@@ -18,23 +18,26 @@ export const Home: React.FC<SectionProps> = ({ t }) => (
       </div>
     </section>
 
-    {/* A little about Elina, then her details */}
-    <section className='about'>
-      <div>
-        <h2>{t.about.title}</h2>
-        <p className='about-text'>{t.about.text}</p>
-      </div>
-      <dl className='stats'>
-        {t.stats.map(stat => (
-          <div key={stat.label}>
-            <dt>{stat.label}</dt>
-            <dd>{stat.value}</dd>
-          </div>
-        ))}
-      </dl>
-    </section>
+    {/* The "Upcoming" menu link lands here, so "About me" and the events show together */}
+    <div id='events'>
+      {/* A little about Elina, then her details */}
+      <section className='about'>
+        <div>
+          <h2>{t.about.title}</h2>
+          <p className='about-text'>{t.about.text}</p>
+        </div>
+        <dl className='stats'>
+          {t.stats.map(stat => (
+            <div key={stat.label}>
+              <dt>{stat.label}</dt>
+              <dd>{stat.value}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
-    {/* Upcoming events, right under "About me" */}
-    <Events t={t} />
+      {/* Upcoming events, right under "About me" */}
+      <Events t={t} />
+    </div>
   </>
 )
