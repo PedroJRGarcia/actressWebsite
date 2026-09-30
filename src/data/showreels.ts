@@ -12,8 +12,8 @@ export const showreels: Showreel[] = [
     title: 'Geschwister',
     lang: 'de',
     filmmakers: [
-      { label: '2023', id: 121502, poster: 'geschwister-filmmakers.webp' },
-      { label: '2023 Sub ESP', id: 121503, poster: 'mitbewohner-filmmakers.webp' },
+      { label: '2023', id: 121502, poster: 'geschwister.webp' },
+      { label: '2023 Sub ESP', id: 121503, poster: 'mitbewohner.webp' },
       { label: 'About me', id: 155593, poster: 'about-me-esp.webp' },
     ],
   },
