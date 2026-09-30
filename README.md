@@ -20,7 +20,7 @@ Each file starts with a comment explaining how to edit it. You never need to tou
 
 | I want to change…                         | File                    |
 | ----------------------------------------- | ----------------------- |
-| Name, email, agency, links, CV file       | `src/data/profile.ts`   |
+| Name, email, agency, links, CV files      | `src/data/profile.ts`   |
 | "Über mich" details and skills (stars)    | `src/data/about.ts`     |
 | Upcoming events                           | `src/data/events.ts`    |
 | Videos                                    | `src/data/showreels.ts` |
@@ -43,7 +43,7 @@ If a language is missing, the build stops with an error, so the site is never pu
 ## Structure
 
 ```
-public/                 files served as they are: resume.pdf, photos/, videos/
+public/                 files served as they are: vita-de.pdf, vita-en.pdf, vita-es.pdf, photos/, videos/
 src/
 ├── data/               CONTENT – one file per section, plain lists
 │   └── types.ts        the fields each list accepts (reference)

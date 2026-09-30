@@ -43,7 +43,10 @@ export function Header({ t, lang, setLang }: HeaderProps) {
             {t(texts.nav[id])}
           </a>
         ))}
-        <a className='button' href={publicFile(profile.resume)} download>
+        <a
+          className='button'
+          href={publicFile(t(profile.resume))}
+          download={`${profile.name} – CV (${lang.toUpperCase()}).pdf`}>
           {t(texts.resume)} ↓
         </a>
       </nav>

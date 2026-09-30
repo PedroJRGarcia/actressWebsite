@@ -7,7 +7,8 @@ export const profile = {
   email: 'elinafernandez.losproductores@gmail.com',
   agency: { name: 'Agency Name', url: 'https://example.com' },
   heroPhoto: headshot, // big photo on the start page (src/assets/headshot.webp)
-  resume: 'resume.pdf', // in public/
+  // CV per language, files in public/. The button downloads the one for the language the visitor has chosen
+  resume: { de: 'vita-de.pdf', en: 'vita-en.pdf', es: 'vita-es.pdf' },
   links: [
     { label: 'IMDb', url: 'https://www.imdb.com' },
     { label: 'Filmmakers', url: 'https://www.filmmakers.eu/es/actors/elina-fernandez/' },
