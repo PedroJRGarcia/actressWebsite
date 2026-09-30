@@ -910,11 +910,24 @@ main .hero {
   color: var(--muted);
 }
 
+/* Poster: a button, so it can be clicked to see it bigger (same viewer as the gallery) */
 .vita-image {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+}
+
+.vita-image img {
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+.vita-image:hover img {
+  transform: scale(1.04);
 }
 
 .vita-tag {

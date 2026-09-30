@@ -1,4 +1,5 @@
 import { BookOpen, Clapperboard, Drama, Film, GraduationCap, Monitor, type LucideIcon } from 'lucide-react'
+import { useEffect, useState } from 'react'
 import { publicFile } from '../content'
 import type { VitaEntry } from '../data/types'
 import { vita } from '../data/vita'
@@ -39,12 +40,7 @@ function Entry({ t, entry, group }: SectionProps & { entry: VitaEntry; group: Gr
       <span className='vita-year'>{entry.year}</span>
 
       {entry.image ? (
-        <img
-          className='vita-image'
-          src={publicFile(`photos/vita/${entry.image.file}`)}
-          alt={t(entry.title)}
-          loading='lazy'
-        />
+        <Poster file={entry.image.file} copyright={entry.image.copyright} alt={t(entry.title)} />
       ) : (
         <span className='vita-no-image' />
       )}
@@ -82,6 +78,40 @@ function Entry({ t, entry, group }: SectionProps & { entry: VitaEntry; group: Gr
         )}
       </div>
     </li>
+  )
+}
+
+// Small poster; clicking it shows it bigger. Click again or press Esc to close
+function Poster({ file, copyright, alt }: { file: string; copyright: string; alt: string }) {
+  const [big, setBig] = useState(false)
+  const src = publicFile(`photos/vita/${file}`)
+
+  // While big: Esc closes, and the page behind does not scroll
+  useEffect(() => {
+    if (!big) return
+    const onKey = (event: KeyboardEvent) => event.key === 'Escape' && setBig(false)
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [big])
+
+  return (
+    <>
+      <button className='vita-image' onClick={() => setBig(true)}>
+        <img src={src} alt={alt} loading='lazy' />
+      </button>
+      {big && (
+        <div className='lightbox' role='dialog' aria-modal='true' onClick={() => setBig(false)}>
+          <figure className='media'>
+            <img src={src} alt={alt} />
+            <small className='copyright'>© {copyright}</small>
+          </figure>
+        </div>
+      )}
+    </>
   )
 }
 
