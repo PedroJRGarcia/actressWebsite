@@ -12,9 +12,10 @@ export const publicFile = (path: string) => `${import.meta.env.BASE_URL}${path}`
 export const copyrightOf = (item: { copyright?: string }) => item.copyright ?? profile.name
 
 // Filmmakers video player. background_color=121212 = the site's dark background (the player then uses white text);
-// playlist=h: the clips of that group are shown as thumbnails to switch between
+// playlist=h: the clips of that group are shown as thumbnails to switch between.
+// autoplay: the visitor already clicked ▶ to load it, so it starts playing right away
 export const filmmakersVideo = (id: number) =>
-  `https://www.filmmakers.eu/es/actors/elina-fernandez/video/${id}?autoplay=false&background_color=121212&iframe=v2&playlist=h`
+  `https://www.filmmakers.eu/es/actors/elina-fernandez/video/${id}?autoplay=true&background_color=121212&iframe=v2&playlist=h`
 
 export const filmmakersAudio = (code: string) => `https://static.filmmakers.eu/production/${code}.mp3`
 

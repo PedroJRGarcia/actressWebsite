@@ -50,14 +50,15 @@ function OwnVideo({ file, poster, copyright }: { file: string; poster?: string; 
 
 const filmmakersProfile = profile.links.find(link => link.label === 'Filmmakers')?.url ?? ''
 
-type FilmmakersProps = SectionProps & { groups: { label: string; id: number }[]; title: string }
+type FilmmakersProps = SectionProps & { groups: { label: string; id: number; poster?: string }[]; title: string }
 
 // Filmmakers player with our own buttons to switch group (2023, About me…).
 // Its own top bar is cropped off (see .filmmakers-crop) and a small "Filmmakers" link takes its place.
-// Privacy: nothing is loaded from Filmmakers until the visitor clicks "Load video".
+// Privacy: nothing is loaded from Filmmakers until the visitor clicks ▶.
 function FilmmakersPlayer({ t, groups, title }: FilmmakersProps) {
   const [active, setActive] = useState(groups[0].id)
   const [loaded, setLoaded] = useState(false)
+  const poster = groups.find(group => group.id === active)?.poster
 
   return (
     <>
@@ -78,16 +79,19 @@ function FilmmakersPlayer({ t, groups, title }: FilmmakersProps) {
               className='filmmakers'
               src={filmmakersVideo(active)}
               title={title}
-              allow='fullscreen; picture-in-picture'
+              allow='autoplay; fullscreen; picture-in-picture'
               allowFullScreen
             />
           ) : (
-            <div className='click-to-load'>
-              <p>{t(texts.filmmakersConsent.text)}</p>
-              <button className='button' onClick={() => setLoaded(true)}>
-                {t(texts.filmmakersConsent.button)}
-              </button>
-            </div>
+            // Before loading: a still of the video (from our own site), a ▶ button and a small privacy note
+            <button
+              className='click-to-load'
+              onClick={() => setLoaded(true)}
+              aria-label={t(texts.filmmakersConsent.button)}>
+              {poster && <img src={publicFile(`videos/${poster}`)} alt='' />}
+              <span className='play-icon'>▶</span>
+              <small>{t(texts.filmmakersConsent.text)}</small>
+            </button>
           )}
         </div>
         <ExternalLink className='filmmakers-badge' href={filmmakersProfile}>

@@ -21,12 +21,13 @@ export const texts = {
     more: { de: 'Mehr Infos', en: 'More info', es: 'Más info' },
   },
   filmmakersConsent: {
+    // Small line under the ▶ button, shown before the video is loaded
     text: {
-      de: 'Dieses Video wird von Filmmakers geladen. Dabei werden Ihre IP-Adresse und technische Daten an Filmmakers übertragen (siehe Datenschutzerklärung).',
-      en: 'This video is loaded from Filmmakers. Loading it sends your IP address and technical data to Filmmakers (see Privacy policy).',
-      es: 'Este vídeo se carga desde Filmmakers. Al cargarlo se envían tu dirección IP y datos técnicos a Filmmakers (ver Política de privacidad).',
+      de: 'Wird von Filmmakers abgespielt · Ihre IP-Adresse wird dabei übertragen (siehe Datenschutz)',
+      en: 'Plays from Filmmakers · this sends them your IP address (see Privacy policy)',
+      es: 'Se reproduce desde Filmmakers · se les envía tu dirección IP (ver Privacidad)',
     },
-    button: { de: 'Video laden ▶', en: 'Load video ▶', es: 'Cargar vídeo ▶' },
+    button: { de: 'Video abspielen', en: 'Play video', es: 'Reproducir vídeo' },
   },
   about: {
     title: { de: 'Über mich', en: 'About me', es: 'Sobre mí' },
