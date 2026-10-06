@@ -21,7 +21,7 @@ export const filmmakersVideo = (id: number) =>
 export const filmmakersAudio = (code: string) => `https://static.filmmakers.eu/production/${code}.mp3`
 
 // Audios grouped by language in this order
-const langOrder: SpokenLang[] = ['de', 'es', 'en']
+const langOrder: SpokenLang[] = ['de', 'es', 'en', 'multi']
 export const sortedAudios = [...audios].sort((a, b) => langOrder.indexOf(a.lang) - langOrder.indexOf(b.lang))
 
 // Events from today on, soonest first
