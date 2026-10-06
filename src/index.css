@@ -896,6 +896,15 @@ main .hero {
   margin-top: 0.5rem;
 }
 
+/* Small Filmmakers privacy note under the audios */
+.audio-note {
+  display: block;
+  margin-top: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
 /* ========================================================================
    10. VITA
    One dropdown per group (training, film, theater). Data in src/data/vita.ts

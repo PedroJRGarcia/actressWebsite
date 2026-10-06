@@ -29,6 +29,12 @@ export const texts = {
     },
     button: { de: 'Video abspielen', en: 'Play video', es: 'Reproducir vídeo' },
   },
+  // Small line under the audios (details: section 5 of the privacy policy)
+  filmmakersAudioNote: {
+    de: 'Wird beim Abspielen von Filmmakers geladen · Dabei wird Ihre IP-Adresse übertragen (siehe Datenschutz)',
+    en: 'Loaded from Filmmakers when played · this sends them your IP address (see Privacy policy)',
+    es: 'Se carga desde Filmmakers al reproducir · se envía tu dirección IP (ver Privacidad)',
+  },
   about: {
     title: { de: 'Über mich', en: 'About me', es: 'Sobre mí' },
     text: {
