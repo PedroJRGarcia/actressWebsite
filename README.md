@@ -66,3 +66,7 @@ Same name everywhere: the Vita section is `data/vita.ts` → `components/Vita.ts
 
 No cookies, no tracking, fonts served from the site itself. Filmmakers videos load only after a click,
 audios only when played (see `src/i18n/legal.ts`).
+
+## Credits
+
+Built by PedroG, with help from Claude (Anthropic) for code and reviews.
