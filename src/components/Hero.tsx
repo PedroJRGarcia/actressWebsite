@@ -7,7 +7,7 @@ export function Hero({ t }: SectionProps) {
   return (
     <section id='home' className='hero'>
       <img src={profile.heroPhoto} alt={profile.name} />
-      <small className='copyright'>© {profile.name}</small>
+      <small className='copyright'>© {profile.heroPhotoBy}</small>
       <div className='hero-content'>
         <h1>{profile.name}</h1>
         <p className='hero-role'>{t(texts.role)}</p>

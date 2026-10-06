@@ -2,17 +2,17 @@
 // Web addresses (https://…) inside a text become links automatically.
 export const legal = {
   impressumText: {
-    de: 'Angaben gemäß § 5 DDG: Elina Fernandez, Sendlinger Kirchplatz 3, 81371 München, Deutschland. E-Mail: elinafernandez.losproductores@gmail.com',
-    en: 'Information according to § 5 DDG: Elina Fernandez, Sendlinger Kirchplatz 3, 81371 Munich, Germany. Email: elinafernandez.losproductores@gmail.com',
-    es: 'Información según § 5 DDG: Elina Fernandez, Sendlinger Kirchplatz 3, 81371 Múnich, Alemania. Email: elinafernandez.losproductores@gmail.com',
+    de: 'Angaben gemäß § 5 DDG: Elina Fernandez Bejarano, Sendlinger Kirchplatz 3, 81371 München, Deutschland. E-Mail: elinafernandez.losproductores@gmail.com',
+    en: 'Information according to § 5 DDG: Elina Fernandez Bejarano, Sendlinger Kirchplatz 3, 81371 Munich, Germany. Email: elinafernandez.losproductores@gmail.com',
+    es: 'Información según § 5 DDG: Elina Fernandez Bejarano, Sendlinger Kirchplatz 3, 81371 Múnich, Alemania. Email: elinafernandez.losproductores@gmail.com',
   },
   privacySections: [
     {
       title: { de: '1. Verantwortliche', en: '1. Controller', es: '1. Responsable' },
       text: {
-        de: 'Verantwortlich für die Datenverarbeitung auf dieser Website ist Elina Fernandez (Anschrift und E-Mail-Adresse siehe Impressum). Bei Fragen zum Datenschutz erreichen Sie mich jederzeit per E-Mail.',
-        en: 'The controller responsible for data processing on this website is Elina Fernandez (postal address and email address: see Impressum). For any privacy questions, you can reach me by email at any time.',
-        es: 'La responsable del tratamiento de datos en esta web es Elina Fernandez (dirección postal y correo electrónico: ver aviso legal / Impressum). Para cualquier consulta sobre privacidad puedes escribirme por correo electrónico en cualquier momento.',
+        de: 'Verantwortlich für die Datenverarbeitung auf dieser Website ist Elina Fernandez Bejarano (Anschrift und E-Mail-Adresse siehe Impressum). Bei Fragen zum Datenschutz erreichen Sie mich jederzeit per E-Mail.',
+        en: 'The controller responsible for data processing on this website is Elina Fernandez Bejarano (postal address and email address: see Impressum). For any privacy questions, you can reach me by email at any time.',
+        es: 'La responsable del tratamiento de datos en esta web es Elina Fernandez Bejarano (dirección postal y correo electrónico: ver aviso legal / Impressum). Para cualquier consulta sobre privacidad puedes escribirme por correo electrónico en cualquier momento.',
       },
     },
     {
