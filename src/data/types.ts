@@ -2,7 +2,7 @@
 // so a typo or a missing field shows up as an error before the site is published.
 import type { Text } from '../i18n'
 
-// Language spoken in a video or audio, shown as a small coloured tag. 'multi': several languages (grey tag)
+// Language spoken in a video or audio, shown as a small coloured tag. 'multi': several languages (mint tag)
 export type SpokenLang = 'de' | 'es' | 'en' | 'multi'
 
 // copyright: author shown as "© …". When left out, Elina's name is used.

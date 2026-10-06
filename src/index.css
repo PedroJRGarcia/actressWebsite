@@ -31,6 +31,7 @@
   --lang-de: #d9b36c; /* gold */
   --lang-es: #e0877a; /* coral */
   --lang-en: #9fa8e6; /* lavender */
+  --lang-multi: #8fcf9f; /* mint: several languages */
   --radius: 6px;
   --max-width: 1100px;
   /* Fonts for the name. Change them only here. */
@@ -207,6 +208,10 @@ main section {
 
 .lang-en {
   --c: var(--lang-en);
+}
+
+.lang-multi {
+  --c: var(--lang-multi);
 }
 
 /* "More info ↗" link (events and vita) */
