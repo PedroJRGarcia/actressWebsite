@@ -58,9 +58,9 @@ export const legal = {
     {
       title: { de: '6. Links zu anderen Websites', en: '6. Links to other websites', es: '6. Enlaces a otras webs' },
       text: {
-        de: 'Links zu anderen Websites (z. B. IMDb, Instagram, Crew United, Filmmakers oder Theaterseiten bei Terminen) sind einfache Verweise. Daten werden an diese Anbieter erst übermittelt, wenn Sie einen Link anklicken; dann gilt deren Datenschutzerklärung.',
-        en: 'Links to other websites (e.g. IMDb, Instagram, Crew United, Filmmakers or theatre pages for events) are plain links. No data is sent to these providers until you click a link; their privacy policies then apply.',
-        es: 'Los enlaces a otras webs (p. ej. IMDb, Instagram, Crew United, Filmmakers o páginas de teatros en la agenda) son simples enlaces. No se envía ningún dato a esos proveedores hasta que haces clic; a partir de ahí se aplica su política de privacidad.',
+        de: 'Links zu anderen Websites (z. B. Instagram, Filmmakers oder Theaterseiten bei Terminen) sind einfache Verweise. Daten werden an diese Anbieter erst übermittelt, wenn Sie einen Link anklicken; dann gilt deren Datenschutzerklärung.',
+        en: 'Links to other websites (e.g. Instagram, Filmmakers or theatre pages for events) are plain links. No data is sent to these providers until you click a link; their privacy policies then apply.',
+        es: 'Los enlaces a otras webs (p. ej. Instagram, Filmmakers o páginas de teatros en la agenda) son simples enlaces. No se envía ningún dato a esos proveedores hasta que haces clic; a partir de ahí se aplica su política de privacidad.',
       },
     },
     {
