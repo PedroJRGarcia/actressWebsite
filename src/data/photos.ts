@@ -12,6 +12,6 @@ export const photos: Photo[] = [
   { file: '8.webp', copyright: 'Hugo Sánchez' },
   { file: '9.webp', copyright: 'Hugo Sánchez' },
   { file: '10.webp', copyright: 'Hugo Sánchez' },
-  { file: '11.webp', copyright: 'Hugo Sánchez' },
-  { file: '12.webp', copyright: 'Hugo Sánchez' },
+  { file: '11.webp', copyright: 'Alexa Yepes' },
+  { file: '12.webp', copyright: 'Alexa Yepes' },
 ]
