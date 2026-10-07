@@ -22,6 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Self-hosted videos not in use (see src/data/showreels.ts); move back to public/videos/ to use them
-videos-guardados

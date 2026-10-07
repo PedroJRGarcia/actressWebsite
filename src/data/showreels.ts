@@ -6,7 +6,7 @@
 import type { Showreel } from './types'
 
 export const showreels: Showreel[] = [
-  //descomentar para self-host videos (los .mp4 están en videos-guardados/: muévelos antes a public/videos/)
+  //descomentar para self-host videos (antes, pon los .mp4 en public/videos/)
   // { title: 'Mitbewohner', lang: 'de', video: 'mitbewohner.mp4', poster: 'mitbewohner.webp' },
   // { title: 'Geschwister', lang: 'de', video: 'geschwister.mp4', poster: 'geschwister.webp' },
   // { title: 'Vergewaltigung', lang: 'de', video: 'vergewaltigung.mp4', poster: 'vergewaltigung.webp' },
